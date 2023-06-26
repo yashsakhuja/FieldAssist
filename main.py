@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import streamlit as st
 #import streamlit_toggle as tog
-import streamlit_pandas as sp
+#import streamlit_pandas as sp
 
 st.set_page_config(layout='wide')
 
