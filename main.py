@@ -1,3 +1,5 @@
+pip3 install stremlit_toggle
+
 import os
 import pandas as pd
 import streamlit as st
