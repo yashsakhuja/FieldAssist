@@ -586,3 +586,5 @@ if remove_button:
     last_row = len(df)-1
     del_df = df.drop(last_row,axis=0)
     update_the_spreadsheet_del('Live Match', del_df)
+
+### End ##################
