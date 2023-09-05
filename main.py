@@ -20,7 +20,7 @@ github_excel_opp_url = 'https://raw.githubusercontent.com/yashsakhuja/FieldAssis
 
 # Fetch the Excel file from GitHub
 data = rq.get(github_excel_opp_url).content
-opponent_squad= pd.read_csv(BytesIO(data))
+opponent_squad = pd.read_csv(BytesIO(data),encoding='utf-8',sep=',')
 
 
 github_excel_lancs_url =  'https://raw.githubusercontent.com/yashsakhuja/FieldAssist/main/data/Lancashire%20Team%20Sheet.csv?token=GHSAT0AAAAAACGXSZCINHKX2SB36BRRBVOUZHXTA4A'
