@@ -502,16 +502,13 @@ conn = connect(credentials=credentials)
 spreadsheetname="FieldAssist- Data Collection File"
 
 st.write("Here's the no cost backend- Google Sheets :)")
-st.write(spread.url)
 
-# Select the "Live Match" worksheet
-worksheet = sh.worksheet('Live Match')
 
 @st.cache_data(ttl=600)
 
 def load_data(url, sheet_name="Live Match"):
     sh = client.open_by_url("https://docs.google.com/spreadsheets/d/1qi_Qdoj1vhKwSnWOQtz2ebA-n5E3VovKa08dWrPmHQk/edit?pli=1#gid=0")
-    df = pd.DataFrame(sh.worksheet(Live Match).get_all_records())
+    df = pd.DataFrame(sh.worksheet('Live Match').get_all_records())
     return df
 
 
