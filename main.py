@@ -2,7 +2,6 @@ import os
 import numpy as np
 import pandas as pd
 import streamlit as st
-import streamlit_toggle as tog
 
 
 
@@ -211,15 +210,9 @@ with match:
     st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
 
     # Toogle switch between extras or not
-    st.session_state['extra_yn']= tog.st_toggle_switch(label="Extra",
-                                    key="extrasyn",
-                                    default_value=0,
-                                    label_after=1,
-                                    inactive_color='red',
-                                    active_color="red",
-                                    track_color="lightgrey",
-                                    )
+    st.session_state['extra_yn']= st.toggle(label="Extra",key="extrasyn",value=False)
     if st.session_state['extra_yn'] == True:
+
         st.session_state['s_extra'] = 1
     else:
         st.session_state['s_extra'] = 0
@@ -238,14 +231,7 @@ with match:
         st.session_state['s_extra_noball'] = st.checkbox("2NB", value=0, key="Nb", disabled=not extra_toggle_state)
 
     # Toogle switch for freehit or not
-    freehit_yn = tog.st_toggle_switch(label="Free Hit",
-                                      key="Fh",
-                                      default_value=0,
-                                      label_after=1,
-                                      inactive_color='red',
-                                      active_color="red",
-                                      track_color="lightgrey",
-                                      )
+    freehit_yn = st.toggle(label="Free Hit",key="Fh",value=False)
     if freehit_yn == True:
         st.session_state['s_fh'] = 1
     else:
@@ -266,23 +252,17 @@ with match:
     st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
     # st.write("Conceeded Runs:", st.session_state['s_rconceeded'])
 
-    # Create Overthrow_Y/N Radio Buttons
-    st.session_state['s_overthrow_yn'] = st.radio(label='Overthrow', options=range(2), key='overthrow_yn')
-    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
+    # Create Overthrow_Y/N toggle Buttons
+    st.session_state['s_overthrow_yn'] = st.toggle(label='Overthrow', key='overthrow_yn',value=False)
+
+    # State for the toogle switch only activates extras when the switch is onn
+    overthrow_toggle_state = st.session_state['overthrow_yn']
 
     # Create Overthrow_runs Radio Buttons
-    st.session_state['s_overthrow_runs'] = st.radio(label='Overthrow', options=range(7), key='overthrow_runs')
+    st.session_state['s_overthrow_runs'] = st.radio(label='Overthrow', options=range(7), key='overthrow_runs',disabled=not overthrow_toggle_state)
     st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
 
-    # Toogle switch for dismissal or not
-    dismissal_yn = tog.st_toggle_switch(label="Dismissal",
-                                      key="Dis",
-                                      default_value=0,
-                                      label_after=1,
-                                      inactive_color='red',
-                                      active_color="red",
-                                      track_color="lightgrey",
-                                      )
+
 
 
 with field:
@@ -401,8 +381,8 @@ with field:
         st.markdown('<span style="color:red; text-decoration:underline; font-weight:bold;">Throws & RunOuts</span>',
                     unsafe_allow_html=True)
     with t_up:
-        st.session_state['s_throwup'] = st.radio(label='Throw Under Pressure', options=range(2), key='up')
-        st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
+        st.session_state['s_throwup'] = st.toggle(label='Throw Under Pressure', value=False, key='up')
+
     t_fact, t_wkact, t_bact = st.columns(3)
     with t_fact:
         if st.session_state['pos_30'] is np.NAN:
@@ -430,36 +410,39 @@ with field:
     st.markdown('<span style="color:red; text-decoration:underline; font-weight:bold;">Relay Activities</span>',
                 unsafe_allow_html=True)
 
-    # Toggle switch between extras or not
-    # Create Overthrow_Y/N Radio Buttons
-    st.session_state['s_relay'] = st.radio(label='Relay', options=range(2), key='relay')
-    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
+    #
+    # Create Relay_Y/N Radio Buttons
+    st.session_state['s_relay'] = st.toggle(label='Relay', key='relay',value=False)
 
+    # State for the toogle switch only activates extras when the switch is onn
+    relay_toggle_state = st.session_state['relay']
 
     relay_player, relay_type, relay_act = st.columns([10, 10, 10])
     with relay_player:
-        st.session_state['r_player'] = st.selectbox('Select Relay Player', field_dp, key='keyr_player',)
+        st.session_state['r_player'] = st.selectbox('Select Relay Player', field_dp, key='keyr_player',disabled=not relay_toggle_state)
 
     with relay_type:
         st.session_state['r_type'] = st.selectbox('Select Relay Type Activity',
                                                   [np.NAN, 'Throw Outside 30', 'Throw Within 30', 'Catching Outside 30',
-                                                   'Catching Within 30'], key='keyr_type')
+                                                   'Catching Within 30'], key='keyr_type',disabled=not relay_toggle_state)
 
     with relay_act:
         if st.session_state['r_type'] is np.NAN:
-            st.session_state['r_f_act'] = st.selectbox("Fielders' Relay Activity", [np.nan], key='s_f_r_act')
+            st.session_state['r_f_act'] = st.selectbox("Fielders' Relay Activity", [np.nan], key='s_f_r_act',disabled=not relay_toggle_state)
         elif st.session_state['r_type'] == 'Throw Outside 30':
-            st.session_state['r_f_act'] = st.selectbox("Fielders' Relay Activity", t_f_outside_dp, key='s_f_r_act')
+            st.session_state['r_f_act'] = st.selectbox("Fielders' Relay Activity", t_f_outside_dp, key='s_f_r_act',disabled=not relay_toggle_state)
         elif st.session_state['r_type'] == 'Throw Within 30':
-            st.session_state['r_f_act'] = st.selectbox("Fielders' Relay Activity", t_f_within_dp, key='s_f_r_act')
+            st.session_state['r_f_act'] = st.selectbox("Fielders' Relay Activity", t_f_within_dp, key='s_f_r_act',disabled=not relay_toggle_state)
         elif st.session_state['r_type'] == 'Catching Outside 30':
-            st.session_state['r_f_act'] = st.selectbox("Fielders' Relay Activity", c_f_outside_dp, key='s_f_r_act')
+            st.session_state['r_f_act'] = st.selectbox("Fielders' Relay Activity", c_f_outside_dp, key='s_f_r_act',disabled=not relay_toggle_state)
         elif st.session_state['r_type'] == 'Catching Within 30':
-            st.session_state['r_f_act'] = st.selectbox("Fielders' Relay Activity", c_f_within_dp, key='s_f_r_act')
+            st.session_state['r_f_act'] = st.selectbox("Fielders' Relay Activity", c_f_within_dp, key='s_f_r_act',disabled=not relay_toggle_state)
 
-add,rem,emp=st.columns([5,5,50])
+dis,add,rem,emp=st.columns([5,5,5,50])
 
-
+with dis:
+    # Toogle switch for dismissal or not
+    dismissal_yn = st.toggle(label="Dismissal", key="Dis", value=False)
 with add:
     add_button=st.button('Add New Ball',key='add')
 with rem:
