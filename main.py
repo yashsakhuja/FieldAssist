@@ -14,7 +14,7 @@ st.set_page_config(layout='wide')
 # Inputting Data
 
 # Inputting Squads& Team Sheets Data
-github_excel_opp_url = "https://github.com/yashsakhuja/FieldAssist/blob/2bb2ddc810a28aa1a6c9fb85e8867ca89663799a/data/Opponent%20Team%20Sheet.xlsx"
+github_excel_opp_url = "https://github.com/yashsakhuja/data/Opponent%20Team%20Sheet.xlsx"
 opponent_squad = pd.read_excel(github_excel_opp_url)
 
 github_excel_lancs_url = "https://github.com/yashsakhuja/FieldAssist/blob/2bb2ddc810a28aa1a6c9fb85e8867ca89663799a/data/Lancashire%20Team%20Sheet.xlsx"
