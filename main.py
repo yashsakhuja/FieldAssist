@@ -203,7 +203,7 @@ if 'r_f_act' not in st.session_state:
 
 
 
-match, field = st.columns([8, 50])
+match, field = st.columns([10, 50])
 
 with match:
 
