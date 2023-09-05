@@ -8,7 +8,7 @@ import requests as rq
 from io import BytesIO
 
 
-from gspread_pandas import Spread,Client
+# from gspread_pandas import Spread,Client
 from google.oauth2 import service_account
 
 
