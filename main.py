@@ -9,10 +9,6 @@ import requests as rq
 from io import BytesIO
 
 
-# from gspread_pandas import Spread,Client
-# from google.oauth2 import service_account
-
-
 st.set_page_config(layout='wide')
 
 
@@ -494,106 +490,108 @@ data = pd.DataFrame(data_dict)
 
 
 
-# # Create the Google Sheets authentication scope
-# scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+#Create the Google Sheets authentication scope
+scope = ["https://www.googleapis.com/auth/spreadsheets"]
 
-# credentials=service_account.Credentials.from_service_account_info(st.secrets,scopes=scope)
+credentials=service_account.Credentials.from_service_account_info(st.secrets["gcp_service_account"],scopes=scope)
 
-# client= Client(scope=scope,creds=credentials)
+conn = connect(credentials=credentials)
 
-# spreadsheetname="FieldAssist- Data Collection File"
-# spread=Spread(spreadsheetname,client=client)
+spreadsheetname="FieldAssist- Data Collection File"
+spread=Spread(spreadsheetname,client=client)
 
-# st.write("Here's the no cost backend- Google Sheets :)")
-# st.write(spread.url)
+st.write("Here's the no cost backend- Google Sheets :)")
+st.write(spread.url)
 
-# #Call our spreadsheet
-# sh=client.open(spreadsheetname)
+#Call our spreadsheet
+sh=client.open(spreadsheetname)
 
-# # Select the "Live Match" worksheet
-# worksheet = sh.worksheet('Live Match')
+# Select the "Live Match" worksheet
+worksheet = sh.worksheet('Live Match')
 
-# # Get the sheet as dataframe
-# def load_the_spreadsheet(spreadsheetname):
-#     worksheet = sh.worksheet(spreadsheetname)
-#     df = pd.DataFrame(worksheet.get_all_records())
-#     return df
+# Get the sheet as dataframe
+def load_the_spreadsheet(spreadsheetname):
+    worksheet = sh.worksheet(spreadsheetname)
+    df = pd.DataFrame(worksheet.get_all_records())
+    return df
+
 
 # # Update to Sheet
-# def update_the_spreadsheet(spreadsheetname: object, dataframe: object) -> object:
-#     col = ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_Byes', 'Extra_LegByes',
-#                                   'Extra_NoBall', 'Free_Hit', 'Result', 'Runs_Saved', 'Runs_Conceeded',
-#                                   'Overthrow Y/N', 'Overthrow_Runs', 'Batsman', 'Bowler', 'Fielder',
-#                                   'Position_From_30', 'Field_Position', 'Fielder_Fielding_Detail',
-#                                   'Keeper_Fielding_Detail', 'Bowler_Fielding_Detail', 'Fielder_Catching_Detail',
-#                                   'Keeper_Catching_Detail', 'Bowler_Catching_Detail', 'Under_Pressure',
-#                                   'Fielder_RunOut_Detail', 'Keeper_RunOut_Detail', 'Bowler_RunOut_Detail',
-#                                   'Relay_Y/N', 'Relay_Player', 'Relay_Type', 'Relay_Activity', 'Stumping_Activity','Dismissal']
-#     spread.df_to_sheet(dataframe[col],sheet = spreadsheetname,index = False)
+def update_the_spreadsheet(spreadsheetname: object, dataframe: object) -> object:
+    col = ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_Byes', 'Extra_LegByes',
+                                  'Extra_NoBall', 'Free_Hit', 'Result', 'Runs_Saved', 'Runs_Conceeded',
+                                  'Overthrow Y/N', 'Overthrow_Runs', 'Batsman', 'Bowler', 'Fielder',
+                                  'Position_From_30', 'Field_Position', 'Fielder_Fielding_Detail',
+                                  'Keeper_Fielding_Detail', 'Bowler_Fielding_Detail', 'Fielder_Catching_Detail',
+                                  'Keeper_Catching_Detail', 'Bowler_Catching_Detail', 'Under_Pressure',
+                                  'Fielder_RunOut_Detail', 'Keeper_RunOut_Detail', 'Bowler_RunOut_Detail',
+                                  'Relay_Y/N', 'Relay_Player', 'Relay_Type', 'Relay_Activity', 'Stumping_Activity','Dismissal']
+    spread.df_to_sheet(dataframe[col],sheet = spreadsheetname,index = False)
 
-# def update_the_spreadsheet_del(spreadsheetname: object, dataframe: object) -> object:
-#     col = ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_Byes', 'Extra_LegByes',
-#                                   'Extra_NoBall', 'Free_Hit', 'Result', 'Runs_Saved', 'Runs_Conceeded',
-#                                   'Overthrow Y/N', 'Overthrow_Runs', 'Batsman', 'Bowler', 'Fielder',
-#                                   'Position_From_30', 'Field_Position', 'Fielder_Fielding_Detail',
-#                                   'Keeper_Fielding_Detail', 'Bowler_Fielding_Detail', 'Fielder_Catching_Detail',
-#                                   'Keeper_Catching_Detail', 'Bowler_Catching_Detail', 'Under_Pressure',
-#                                   'Fielder_RunOut_Detail', 'Keeper_RunOut_Detail', 'Bowler_RunOut_Detail',
-#                                   'Relay_Y/N', 'Relay_Player', 'Relay_Type', 'Relay_Activity', 'Stumping_Activity','Dismissal']
-#     spread.df_to_sheet(dataframe[col],sheet = spreadsheetname,index = False,replace=True)
+def update_the_spreadsheet_del(spreadsheetname: object, dataframe: object) -> object:
+            col = ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_Byes', 'Extra_LegByes',
+                                   'Extra_NoBall', 'Free_Hit', 'Result', 'Runs_Saved', 'Runs_Conceeded',
+                                   'Overthrow Y/N', 'Overthrow_Runs', 'Batsman', 'Bowler', 'Fielder',
+                                   'Position_From_30', 'Field_Position', 'Fielder_Fielding_Detail',
+                                   'Keeper_Fielding_Detail', 'Bowler_Fielding_Detail', 'Fielder_Catching_Detail',
+                                   'Keeper_Catching_Detail', 'Bowler_Catching_Detail', 'Under_Pressure',
+                                   'Fielder_RunOut_Detail', 'Keeper_RunOut_Detail', 'Bowler_RunOut_Detail',
+                                   'Relay_Y/N', 'Relay_Player', 'Relay_Type', 'Relay_Activity', 'Stumping_Activity','Dismissal']
+            
+            spread.df_to_sheet(dataframe[col],sheet = spreadsheetname,index = False,replace=True)
 
 
 # Create a button to add the data
-# if add_button:
-#     # Create a dictionary to store column names and values
-#     data = pd.DataFrame({
-#         'Over': [st.session_state['s_over']],
-#         'Ball': [st.session_state['s_ball']],
-#         'Extra_Y/N': [st.session_state['s_extra']],
-#         'Extra_Wide': [st.session_state['s_extra_wide']],
-#         'Extra_Byes': [st.session_state['s_extra_byes']],
-#         'Extra_LegByes': [st.session_state['s_extra_legbyes']],
-#         'Extra_NoBall': [st.session_state['s_extra_noball']],
-#         'Free_Hit': [st.session_state['s_fh']],
-#         'Result': [st.session_state['s_result']],
-#         'Runs_Saved': [st.session_state['s_rsaved']],
-#         'Runs_Conceeded': [st.session_state['s_rconceeded']],
-#         'Overthrow Y/N': [st.session_state['s_overthrow_yn']],
-#         'Overthrow_Runs': [st.session_state['s_overthrow_runs']],
-#         'Batsman': [st.session_state['s_bat']],
-#         'Bowler': [st.session_state['s_bowler']],
-#         'Fielder': [st.session_state['s_field']],
-#         'Position_From_30': st.session_state['pos_30'],
-#         'Field_Position': [st.session_state['f_pos']],
-#         'Fielder_Fielding_Detail': [st.session_state['gf_f_act']],
-#         'Keeper_Fielding_Detail': [st.session_state['gf_wk_act']],
-#         'Bowler_Fielding_Detail': [st.session_state['gf_b_act']],
-#         'Fielder_Catching_Detail': [st.session_state['c_f_act']],
-#         'Keeper_Catching_Detail': [st.session_state['c_wk_act']],
-#         'Bowler_Catching_Detail': [st.session_state['c_b_act']],
-#         'Under_Pressure': [st.session_state['s_throwup']],
-#         'Fielder_RunOut_Detail': [st.session_state['t_f_act']],
-#         'Keeper_RunOut_Detail': [st.session_state['t_wk_act']],
-#         'Bowler_RunOut_Detail': [st.session_state['t_b_act']],
-#         'Relay_Y/N': [st.session_state['s_relay']],
-#         'Relay_Player': [st.session_state['r_player']],
-#         'Relay_Type': [st.session_state['r_type']],
-#         'Relay_Activity': [st.session_state['r_f_act']],
-#         'Stumping_Activity': [st.session_state['s_wk_act']],
-#         'Dismissal':[st.session_state['s_dismissal']]
-#     })
+if add_button:
+# Create a dictionary to store column names and values
+data = pd.DataFrame({
+ 'Over': [st.session_state['s_over']],
+ 'Ball': [st.session_state['s_ball']],
+ 'Extra_Y/N': [st.session_state['s_extra']],
+ 'Extra_Wide': [st.session_state['s_extra_wide']],
+        'Extra_Byes': [st.session_state['s_extra_byes']],
+        'Extra_LegByes': [st.session_state['s_extra_legbyes']],
+        'Extra_NoBall': [st.session_state['s_extra_noball']],
+        'Free_Hit': [st.session_state['s_fh']],
+        'Result': [st.session_state['s_result']],
+        'Runs_Saved': [st.session_state['s_rsaved']],
+        'Runs_Conceeded': [st.session_state['s_rconceeded']],
+        'Overthrow Y/N': [st.session_state['s_overthrow_yn']],
+        'Overthrow_Runs': [st.session_state['s_overthrow_runs']],
+        'Batsman': [st.session_state['s_bat']],
+        'Bowler': [st.session_state['s_bowler']],
+        'Fielder': [st.session_state['s_field']],
+        'Position_From_30': st.session_state['pos_30'],
+        'Field_Position': [st.session_state['f_pos']],
+        'Fielder_Fielding_Detail': [st.session_state['gf_f_act']],
+        'Keeper_Fielding_Detail': [st.session_state['gf_wk_act']],
+        'Bowler_Fielding_Detail': [st.session_state['gf_b_act']],
+        'Fielder_Catching_Detail': [st.session_state['c_f_act']],
+        'Keeper_Catching_Detail': [st.session_state['c_wk_act']],
+        'Bowler_Catching_Detail': [st.session_state['c_b_act']],
+        'Under_Pressure': [st.session_state['s_throwup']],
+        'Fielder_RunOut_Detail': [st.session_state['t_f_act']],
+        'Keeper_RunOut_Detail': [st.session_state['t_wk_act']],
+        'Bowler_RunOut_Detail': [st.session_state['t_b_act']],
+        'Relay_Y/N': [st.session_state['s_relay']],
+        'Relay_Player': [st.session_state['r_player']],
+        'Relay_Type': [st.session_state['r_type']],
+        'Relay_Activity': [st.session_state['r_f_act']],
+        'Stumping_Activity': [st.session_state['s_wk_act']],
+        'Dismissal':[st.session_state['s_dismissal']]
+    })
 
-#     df = load_the_spreadsheet('Live Match')
-#     new_df = df.append(data, ignore_index=True)
-#     new_df=new_df.reset_index(inplace=False)
-#     update_the_spreadsheet('Live Match', new_df)
+    df = load_the_spreadsheet('Live Match')
+    new_df = df.append(data, ignore_index=True)
+    new_df=new_df.reset_index(inplace=False)
+    update_the_spreadsheet('Live Match', new_df)
 
-# if remove_button:
-#     # Create a dictionary to store column names and values
-#     df = load_the_spreadsheet('Live Match')
+if remove_button:
+    # Create a dictionary to store column names and values
+    df = load_the_spreadsheet('Live Match')
 
-#     last_row = len(df)-1
-#     del_df = df.drop(last_row,axis=0)
-#     update_the_spreadsheet_del('Live Match', del_df)
+    last_row = len(df)-1
+    del_df = df.drop(last_row,axis=0)
+    update_the_spreadsheet_del('Live Match', del_df)
 
 ### End ##################
