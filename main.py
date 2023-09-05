@@ -521,7 +521,10 @@ def update_the_spreadsheet(spreadsheetname: object, dataframe: object) -> object
                                   'Relay_Y/N', 'Relay_Player', 'Relay_Type', 'Relay_Activity', 'Stumping_Activity','Dismissal']
             sh=client.open_by_url('https://docs.google.com/spreadsheets/d/1qi_Qdoj1vhKwSnWOQtz2ebA-n5E3VovKa08dWrPmHQk/edit?pli=1#gid=0')
             worksheet = sh.worksheet(spreadsheetname)
-            worksheet.df_to_sheet(dataframe[col],sheet = spreadsheetname,index = False)
+            # Find the last empty row in the worksheet
+            last_empty_row = len(worksheet.get_all_values()) + 1
+            # Update the worksheet with the data from the dataframe starting from the last empty row
+            worksheet.insert_rows(dataframe[col].values.tolist(), last_empty_row)
 
 def update_the_spreadsheet_del(spreadsheetname: object, dataframe: object) -> object:
             col = ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_Byes', 'Extra_LegByes',
