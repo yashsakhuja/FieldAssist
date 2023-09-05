@@ -503,10 +503,8 @@ spreadsheetname="FieldAssist- Data Collection File"
 st.write("Here's the no cost backend- Google Sheets :)")
 
 
-@st.cache_data(ttl=600)
-
 def load_data(url, sheet_name="Live Match"):
-    sh = client.open_by_url("https://docs.google.com/spreadsheets/d/1qi_Qdoj1vhKwSnWOQtz2ebA-n5E3VovKa08dWrPmHQk/edit?pli=1#gid=0")
+    sh = client.open_by_url(url)
     df = pd.DataFrame(sh.worksheet('Live Match').get_all_records())
     return df
 
@@ -576,7 +574,7 @@ if add_button:
                     'Dismissal':[st.session_state['s_dismissal']]
     })
 
-df = load_the_spreadsheet('Live Match')
+df = load_data('https://docs.google.com/spreadsheets/d/1qi_Qdoj1vhKwSnWOQtz2ebA-n5E3VovKa08dWrPmHQk/edit?pli=1#gid=0')
 new_df = df.append(data, ignore_index=True)
 new_df=new_df.reset_index(inplace=False)
 update_the_spreadsheet('Live Match', new_df)
