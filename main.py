@@ -12,10 +12,12 @@ from io import BytesIO
 st.set_page_config(layout='wide')
 
 
-# Inputting Squads& Team Sheets Data
+# Inputting Squads & Team Sheets Data
 github_excel_opp_url =  'https://raw.githubusercontent.com/yashsakhuja/FieldAssist/main/data/Opponent%20Team%20Sheet.csv?token=GHSAT0AAAAAACGXSZCIJIBQ4NSSGAGCODYKZHXTFGA'
+
 # Fetch the Excel file from GitHub
 data = rq.get(github_excel_opp_url).content
+
 opponent_squad = pd.read_csv(BytesIO(data),encoding='utf-8',sep=',')
 
 
@@ -518,7 +520,7 @@ def load_the_spreadsheet(spreadsheetname):
 
 # # Update to Sheet
 def update_the_spreadsheet(spreadsheetname: object, dataframe: object) -> object:
-    col = ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_Byes', 'Extra_LegByes',
+            col = ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_Byes', 'Extra_LegByes',
                                   'Extra_NoBall', 'Free_Hit', 'Result', 'Runs_Saved', 'Runs_Conceeded',
                                   'Overthrow Y/N', 'Overthrow_Runs', 'Batsman', 'Bowler', 'Fielder',
                                   'Position_From_30', 'Field_Position', 'Fielder_Fielding_Detail',
@@ -526,7 +528,7 @@ def update_the_spreadsheet(spreadsheetname: object, dataframe: object) -> object
                                   'Keeper_Catching_Detail', 'Bowler_Catching_Detail', 'Under_Pressure',
                                   'Fielder_RunOut_Detail', 'Keeper_RunOut_Detail', 'Bowler_RunOut_Detail',
                                   'Relay_Y/N', 'Relay_Player', 'Relay_Type', 'Relay_Activity', 'Stumping_Activity','Dismissal']
-    spread.df_to_sheet(dataframe[col],sheet = spreadsheetname,index = False)
+            spread.df_to_sheet(dataframe[col],sheet = spreadsheetname,index = False)
 
 def update_the_spreadsheet_del(spreadsheetname: object, dataframe: object) -> object:
             col = ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_Byes', 'Extra_LegByes',
