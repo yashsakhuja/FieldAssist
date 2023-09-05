@@ -4,7 +4,6 @@ import pandas as pd
 import streamlit as st
 import gspread
 from google.oauth2 import service_account
-from gsheetsdb import connect
 import requests as rq
 from io import BytesIO
 
@@ -496,25 +495,23 @@ data = pd.DataFrame(data_dict)
 scope = ["https://www.googleapis.com/auth/spreadsheets"]
 
 credentials=service_account.Credentials.from_service_account_info(st.secrets["gcp_service_account"],scopes=scope)
+client = gspread.authorize(credentials)
 
 conn = connect(credentials=credentials)
 
 spreadsheetname="FieldAssist- Data Collection File"
-spread=Spread(spreadsheetname,client=client)
 
 st.write("Here's the no cost backend- Google Sheets :)")
 st.write(spread.url)
 
-#Call our spreadsheet
-sh=client.open(spreadsheetname)
-
 # Select the "Live Match" worksheet
 worksheet = sh.worksheet('Live Match')
 
-# Get the sheet as dataframe
-def load_the_spreadsheet(spreadsheetname):
-    worksheet = sh.worksheet(spreadsheetname)
-    df = pd.DataFrame(worksheet.get_all_records())
+@st.cache_data(ttl=600)
+
+def load_data(url, sheet_name="Live Match"):
+    sh = client.open_by_url("https://docs.google.com/spreadsheets/d/1qi_Qdoj1vhKwSnWOQtz2ebA-n5E3VovKa08dWrPmHQk/edit?pli=1#gid=0")
+    df = pd.DataFrame(sh.worksheet(Live Match).get_all_records())
     return df
 
 
