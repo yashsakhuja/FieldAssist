@@ -519,7 +519,8 @@ def update_the_spreadsheet(spreadsheetname: object, dataframe: object) -> object
                                   'Keeper_Catching_Detail', 'Bowler_Catching_Detail', 'Under_Pressure',
                                   'Fielder_RunOut_Detail', 'Keeper_RunOut_Detail', 'Bowler_RunOut_Detail',
                                   'Relay_Y/N', 'Relay_Player', 'Relay_Type', 'Relay_Activity', 'Stumping_Activity','Dismissal']
-            spread.df_to_sheet(dataframe[col],sheet = spreadsheetname,index = False)
+            sh=client.open_by_url('https://docs.google.com/spreadsheets/d/1qi_Qdoj1vhKwSnWOQtz2ebA-n5E3VovKa08dWrPmHQk/edit?pli=1#gid=0')
+            sh.df_to_sheet(dataframe[col],sheet = spreadsheetname,index = False)
 
 def update_the_spreadsheet_del(spreadsheetname: object, dataframe: object) -> object:
             col = ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_Byes', 'Extra_LegByes',
