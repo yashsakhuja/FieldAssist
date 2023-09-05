@@ -4,6 +4,9 @@ import pandas as pd
 import streamlit as st
 import gspread
 # import gspread_pandas
+import requests as rq
+from io import BytesIO
+
 
 # from gspread_pandas import Spread,Client
 # from google.oauth2 import service_account
@@ -15,7 +18,8 @@ st.set_page_config(layout='wide')
 
 # Inputting Squads& Team Sheets Data
 github_excel_opp_url =  "https://raw.githubusercontent.com/yashsakhuja/FieldAssist/main/data/Opponent%20Team%20Sheet.xlsx"
-opponent_squad = pd.read_excel(github_excel_opp_url)
+data=rq.get(github_excel_opp_url).content
+opponent_squad = pd.read_excel(BytesIO(data))
 
 github_excel_lancs_url =  "https://raw.githubusercontent.com/yashsakhuja/FieldAssist/main/data/Lancashire%20Team%20Sheet.xlsx"
 lancashire_squad = pd.read_excel(github_excel_lancs_url)
