@@ -19,7 +19,7 @@ st.set_page_config(layout='wide')
 github_excel_opp_url =  'https://raw.githubusercontent.com/yashsakhuja/FieldAssist/main/data/Opponent%20Team%20Sheet.csv'
 # Fetch the Excel file from GitHub
 data = rq.get(github_excel_opp_url).content
-opponent_squad = pd.read_excel(BytesIO(data),engine='openpyxl')
+opponent_squad = pd.read_csv(BytesIO(data))
 
 
 github_excel_lancs_url =  "https://raw.githubusercontent.com/yashsakhuja/FieldAssist/main/data/Lancashire%20Team%20Sheet.xlsx"
