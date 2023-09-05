@@ -17,7 +17,7 @@ st.set_page_config(layout='wide')
 # Inputting Data
 
 # Inputting Squads& Team Sheets Data
-github_excel_opp_url =  'https://github.com/yashsakhuja/FieldAssist/blob/fb5b5ab1a04115d68712b676c29a17cdd9012e20/data/Opponent%20Team%20Sheet.xlsx'
+github_excel_opp_url =  'https://github.com/yashsakhuja/FieldAssist/main/data/Opponent%20Team%20Sheet.xlsx'
 data=rq.get(github_excel_opp_url).content
 opponent_squad = pd.read_excel(BytesIO(data))
 
