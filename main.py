@@ -16,13 +16,14 @@ st.set_page_config(layout='wide')
 
 
 #Inputting Squads& Team Sheets Data
-github_excel_opp_url =  'https://github.com/yashsakhuja/FieldAssist/blob/main/data/Opponent%20Team%20Sheet.csv'
+github_excel_opp_url = 'https://raw.githubusercontent.com/yashsakhuja/FieldAssist/main/data/Opponent%20Team%20Sheet.csv?token=GHSAT0AAAAAACGXSZCIVYEZHHAQNHI36C2GZHXS7XQ'
+
 # Fetch the Excel file from GitHub
 data = rq.get(github_excel_opp_url).content
 opponent_squad= pd.read_csv(BytesIO(data))
 
 
-github_excel_lancs_url =  "https://raw.githubusercontent.com/yashsakhuja/FieldAssist/main/data/Lancashire%20Team%20Sheet.csv"
+github_excel_lancs_url =  'https://raw.githubusercontent.com/yashsakhuja/FieldAssist/main/data/Lancashire%20Team%20Sheet.csv?token=GHSAT0AAAAAACGXSZCINHKX2SB36BRRBVOUZHXTA4A'
 data = rq.get(github_excel_lancs_url).content
 lancashire_squad= pd.read_csv(BytesIO(data))
 
@@ -33,7 +34,7 @@ fieldingteam = list(lancashire_squad['Player_Name'])
 fieldingteam.insert(0, np.nan)
 
 # Inputting Parameter Scores Data
-github_excel_param_url = "https://raw.githubusercontent.com/yashsakhuja/FieldAssist/main/data/Fielding%20Parameter%20Score%20List.csv"
+github_excel_param_url = 'https://raw.githubusercontent.com/yashsakhuja/FieldAssist/main/data/Fielding%20Parameter%20Score%20List.csv?token=GHSAT0AAAAAACGXSZCJVWIVIOQGDTLCDV5KZHXTBHA'
 data = rq.get(github_excel_param_url).content
 parameter_scores = pd.read_csv(BytesIO(data))
 
