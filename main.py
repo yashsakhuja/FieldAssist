@@ -581,10 +581,10 @@ if add_button:
                     'Dismissal':[st.session_state['s_dismissal']]
     })
 
-    df = load_the_spreadsheet('Live Match')
-    new_df = df.append(data, ignore_index=True)
-    new_df=new_df.reset_index(inplace=False)
-    update_the_spreadsheet('Live Match', new_df)
+df = load_the_spreadsheet('Live Match')
+new_df = df.append(data, ignore_index=True)
+new_df=new_df.reset_index(inplace=False)
+update_the_spreadsheet('Live Match', new_df)
 
 if remove_button:
     # Create a dictionary to store column names and values
