@@ -485,53 +485,53 @@ data = pd.DataFrame(data_dict)
 
 
 
-# Create the Google Sheets authentication scope
-scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+# # Create the Google Sheets authentication scope
+# scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
 
-credentials=service_account.Credentials.from_service_account_info(st.secrets,scopes=scope)
+# credentials=service_account.Credentials.from_service_account_info(st.secrets,scopes=scope)
 
-client= Client(scope=scope,creds=credentials)
+# client= Client(scope=scope,creds=credentials)
 
-spreadsheetname="FieldAssist- Data Collection File"
-spread=Spread(spreadsheetname,client=client)
+# spreadsheetname="FieldAssist- Data Collection File"
+# spread=Spread(spreadsheetname,client=client)
 
-st.write("Here's the no cost backend- Google Sheets :)")
-st.write(spread.url)
+# st.write("Here's the no cost backend- Google Sheets :)")
+# st.write(spread.url)
 
-#Call our spreadsheet
-sh=client.open(spreadsheetname)
+# #Call our spreadsheet
+# sh=client.open(spreadsheetname)
 
-# Select the "Live Match" worksheet
-worksheet = sh.worksheet('Live Match')
+# # Select the "Live Match" worksheet
+# worksheet = sh.worksheet('Live Match')
 
-# Get the sheet as dataframe
-def load_the_spreadsheet(spreadsheetname):
-    worksheet = sh.worksheet(spreadsheetname)
-    df = pd.DataFrame(worksheet.get_all_records())
-    return df
+# # Get the sheet as dataframe
+# def load_the_spreadsheet(spreadsheetname):
+#     worksheet = sh.worksheet(spreadsheetname)
+#     df = pd.DataFrame(worksheet.get_all_records())
+#     return df
 
-# Update to Sheet
-def update_the_spreadsheet(spreadsheetname: object, dataframe: object) -> object:
-    col = ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_Byes', 'Extra_LegByes',
-                                  'Extra_NoBall', 'Free_Hit', 'Result', 'Runs_Saved', 'Runs_Conceeded',
-                                  'Overthrow Y/N', 'Overthrow_Runs', 'Batsman', 'Bowler', 'Fielder',
-                                  'Position_From_30', 'Field_Position', 'Fielder_Fielding_Detail',
-                                  'Keeper_Fielding_Detail', 'Bowler_Fielding_Detail', 'Fielder_Catching_Detail',
-                                  'Keeper_Catching_Detail', 'Bowler_Catching_Detail', 'Under_Pressure',
-                                  'Fielder_RunOut_Detail', 'Keeper_RunOut_Detail', 'Bowler_RunOut_Detail',
-                                  'Relay_Y/N', 'Relay_Player', 'Relay_Type', 'Relay_Activity', 'Stumping_Activity','Dismissal']
-    spread.df_to_sheet(dataframe[col],sheet = spreadsheetname,index = False)
+# # Update to Sheet
+# def update_the_spreadsheet(spreadsheetname: object, dataframe: object) -> object:
+#     col = ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_Byes', 'Extra_LegByes',
+#                                   'Extra_NoBall', 'Free_Hit', 'Result', 'Runs_Saved', 'Runs_Conceeded',
+#                                   'Overthrow Y/N', 'Overthrow_Runs', 'Batsman', 'Bowler', 'Fielder',
+#                                   'Position_From_30', 'Field_Position', 'Fielder_Fielding_Detail',
+#                                   'Keeper_Fielding_Detail', 'Bowler_Fielding_Detail', 'Fielder_Catching_Detail',
+#                                   'Keeper_Catching_Detail', 'Bowler_Catching_Detail', 'Under_Pressure',
+#                                   'Fielder_RunOut_Detail', 'Keeper_RunOut_Detail', 'Bowler_RunOut_Detail',
+#                                   'Relay_Y/N', 'Relay_Player', 'Relay_Type', 'Relay_Activity', 'Stumping_Activity','Dismissal']
+#     spread.df_to_sheet(dataframe[col],sheet = spreadsheetname,index = False)
 
-def update_the_spreadsheet_del(spreadsheetname: object, dataframe: object) -> object:
-    col = ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_Byes', 'Extra_LegByes',
-                                  'Extra_NoBall', 'Free_Hit', 'Result', 'Runs_Saved', 'Runs_Conceeded',
-                                  'Overthrow Y/N', 'Overthrow_Runs', 'Batsman', 'Bowler', 'Fielder',
-                                  'Position_From_30', 'Field_Position', 'Fielder_Fielding_Detail',
-                                  'Keeper_Fielding_Detail', 'Bowler_Fielding_Detail', 'Fielder_Catching_Detail',
-                                  'Keeper_Catching_Detail', 'Bowler_Catching_Detail', 'Under_Pressure',
-                                  'Fielder_RunOut_Detail', 'Keeper_RunOut_Detail', 'Bowler_RunOut_Detail',
-                                  'Relay_Y/N', 'Relay_Player', 'Relay_Type', 'Relay_Activity', 'Stumping_Activity','Dismissal']
-    spread.df_to_sheet(dataframe[col],sheet = spreadsheetname,index = False,replace=True)
+# def update_the_spreadsheet_del(spreadsheetname: object, dataframe: object) -> object:
+#     col = ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_Byes', 'Extra_LegByes',
+#                                   'Extra_NoBall', 'Free_Hit', 'Result', 'Runs_Saved', 'Runs_Conceeded',
+#                                   'Overthrow Y/N', 'Overthrow_Runs', 'Batsman', 'Bowler', 'Fielder',
+#                                   'Position_From_30', 'Field_Position', 'Fielder_Fielding_Detail',
+#                                   'Keeper_Fielding_Detail', 'Bowler_Fielding_Detail', 'Fielder_Catching_Detail',
+#                                   'Keeper_Catching_Detail', 'Bowler_Catching_Detail', 'Under_Pressure',
+#                                   'Fielder_RunOut_Detail', 'Keeper_RunOut_Detail', 'Bowler_RunOut_Detail',
+#                                   'Relay_Y/N', 'Relay_Player', 'Relay_Type', 'Relay_Activity', 'Stumping_Activity','Dismissal']
+#     spread.df_to_sheet(dataframe[col],sheet = spreadsheetname,index = False,replace=True)
 
 
 # Create a button to add the data
