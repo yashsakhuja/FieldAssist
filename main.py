@@ -14,10 +14,10 @@ st.set_page_config(layout='wide')
 # Inputting Data
 
 # Inputting Squads& Team Sheets Data
-github_excel_opp_url = 'https://raw.githubusercontent.com/yashsakhuja/FieldAssist/data/Opponent Team Sheet.xlsx'
+github_excel_opp_url = https://raw.githubusercontent.com/yashsakhuja/FieldAssist/data/Opponent Team Sheet.xlsx
 opponent_squad = pd.read_excel(github_excel_opp_url)
 
-github_excel_lancs_url = 'https://raw.githubusercontent.com/yashsakhuja/FieldAssist/data/Lancashire Team Sheet.xlsx'
+github_excel_lancs_url = https://raw.githubusercontent.com/yashsakhuja/FieldAssist/data/Lancashire Team Sheet.xlsx
 lancashire_squad = pd.read_excel(github_excel_lancs_url)
 
 battingteam = list(opponent_squad['Player Name'])
@@ -25,8 +25,9 @@ battingteam.insert(0, np.nan)
 
 fieldingteam = list(lancashire_squad['Player Name'])
 fieldingteam.insert(0, np.nan)
+
 # Inputting Parameter Scores Data
-github_excel_param_url = 'https://raw.githubusercontent.com/yashsakhuja/FieldAssist/data/Fielding Parameter Score List.xlsx'
+github_excel_param_url = https://raw.githubusercontent.com/yashsakhuja/FieldAssist/data/Fielding Parameter Score List.xlsx
 parameter_scores = pd.read_excel(github_excel_param_url)
 
 gf_f_within_dp = list(parameter_scores[(parameter_scores['Fielder_type'] == 'fielder') & (
