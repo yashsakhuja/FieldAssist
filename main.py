@@ -35,7 +35,7 @@ fieldingteam.insert(0, np.nan)
 # Inputting Parameter Scores Data
 github_excel_param_url = "https://raw.githubusercontent.com/yashsakhuja/FieldAssist/main/data/Fielding%20Parameter%20Score%20List.csv"
 data = rq.get(github_excel_param_url).content
-parameter_scores = pd.read_csv(BytesIO(data)
+parameter_scores = pd.read_csv(BytesIO(data))
 
 gf_f_within_dp = list(parameter_scores[(parameter_scores['Fielder_type'] == 'fielder') & (
             parameter_scores['Fielding_area'] == 'within_30') & (parameter_scores['Fielding_type'] == 'fielding')][
