@@ -3,7 +3,8 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import gspread
-# import gspread_pandas
+from google.oauth2 import service_account
+from gsheetsdb import connect
 import requests as rq
 from io import BytesIO
 
