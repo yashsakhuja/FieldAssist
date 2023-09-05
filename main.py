@@ -26,10 +26,10 @@ github_excel_lancs_url =  "https://raw.githubusercontent.com/yashsakhuja/FieldAs
 data = rq.get(github_excel_lancs_url).content
 lancashire_squad= pd.read_csv(BytesIO(data))
 
-battingteam = list(opponent_squad['Player Name'])
+battingteam = list(opponent_squad['Player_Name'])
 battingteam.insert(0, np.nan)
 
-fieldingteam = list(lancashire_squad['Player Name'])
+fieldingteam = list(lancashire_squad['Player_Name'])
 fieldingteam.insert(0, np.nan)
 
 # Inputting Parameter Scores Data
