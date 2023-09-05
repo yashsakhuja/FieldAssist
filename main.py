@@ -3,9 +3,9 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import gspread
-import gspread_pandas
+#import gspread_pandas
 
-from gspread_pandas import Spread,Client
+#from gspread_pandas import Spread,Client
 from google.oauth2 import service_account
 
 
