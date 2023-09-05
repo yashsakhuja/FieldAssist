@@ -5,7 +5,7 @@ import streamlit as st
 
 
 
-from gspread-pandas import Spread,Client
+from gspread_pandas import Spread,Client
 from google.oauth2 import service_account
 
 
