@@ -14,12 +14,13 @@ from io import BytesIO
 
 st.set_page_config(layout='wide')
 
-# Inputting Data
 
 # Inputting Squads& Team Sheets Data
 github_excel_opp_url =  'https://raw.githubusercontent.com/yashsakhuja/FieldAssist/main/data/Opponent%20Team%20Sheet.xlsx'
-data=rq.get(github_excel_opp_url).content
-opponent_squad = pd.read_excel(BytesIO(data))
+# Fetch the Excel file from GitHub
+response = rq.get(github_excel_opp_url)
+opponent_squad = pd.read_excel(response.content)
+
 
 github_excel_lancs_url =  "https://raw.githubusercontent.com/yashsakhuja/FieldAssist/main/data/Lancashire%20Team%20Sheet.xlsx"
 lancashire_squad = pd.read_excel(github_excel_lancs_url)
