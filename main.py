@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import gspread
-import gspread_pandas
+# import gspread_pandas
 import requests as rq
 from io import BytesIO
 
