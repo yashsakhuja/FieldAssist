@@ -11,7 +11,6 @@ from io import BytesIO
 
 st.set_page_config(layout='wide')
 
-new_df=pd.DataFrame()
 # Inputting Squads & Team Sheets Data
 github_excel_opp_url =  'https://raw.githubusercontent.com/yashsakhuja/FieldAssist/main/data/Opponent%20Team%20Sheet.csv?token=GHSAT0AAAAAACGXSZCIJIBQ4NSSGAGCODYKZHXTFGA'
 
@@ -579,7 +578,11 @@ if add_button:
     })
 
     df = load_the_spreadsheet('Live Match')
-    new_df = df.append(data, ignore_index=True)
+
+    # Create a new DataFrame from the 'data' dictionary
+    new_data = pd.DataFrame(data)
+
+    new_df = pd.concat([df, new_data], ignore_index=True)
     new_df=new_df.reset_index(inplace=False)
     update_the_spreadsheet('Live Match', new_df)
 
