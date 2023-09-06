@@ -14,4 +14,13 @@ https://www.researchgate.net/publication/275460591_A_Double_Weighted_Tool_to_Mea
 
 Sample Squad players here are from Lancashire Vs. Surrey Game played in the Quarter Final of Blast 2023
 
-For each game we need to change 
+For each game we need to change squads and for each innings batting team and fielding team swap to take place.
+
+Work in Progress to enhance the data collection process to make it more real-time during matches and enhance with ML models to auto capture fielding actions
+
+Please get in touch if you are interested in sport and would join me in further development of this product.
+
+Reach out to me on:
+LinkeidIn: https://www.linkedin.com/in/yash-sakhuja/
+Mail me at: yash.sakhuja01@gmail.com
+
