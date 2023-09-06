@@ -11,7 +11,7 @@ from io import BytesIO
 
 st.set_page_config(layout='wide')
 
-new_df=pd.Dataframe()
+new_df=pd.DataFrame()
 # Inputting Squads & Team Sheets Data
 github_excel_opp_url =  'https://raw.githubusercontent.com/yashsakhuja/FieldAssist/main/data/Opponent%20Team%20Sheet.csv?token=GHSAT0AAAAAACGXSZCIJIBQ4NSSGAGCODYKZHXTFGA'
 
