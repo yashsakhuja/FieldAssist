@@ -4,6 +4,7 @@ import pandas as pd
 import streamlit as st
 import gspread
 from google.oauth2 import service_account
+from gspread_dataframe import get_as_dataframe, set_with_dataframe
 import requests as rq
 from io import BytesIO
 
