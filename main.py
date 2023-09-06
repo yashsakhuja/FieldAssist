@@ -548,7 +548,7 @@ if add_button:
         'Batsman': [st.session_state['s_bat']],
         'Bowler': [st.session_state['s_bowler']],
         'Fielder': [st.session_state['s_field']],
-        'Position_From_30': st.session_state['pos_30'],
+        'Position_From_30': [st.session_state['pos_30']],
         'Field_Position': [st.session_state['f_pos']],
         'Fielder_Fielding_Detail': [st.session_state['gf_f_act']],
         'Keeper_Fielding_Detail': [st.session_state['gf_wk_act']],
