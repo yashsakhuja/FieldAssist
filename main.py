@@ -519,7 +519,7 @@ def update_the_spreadsheet(url:object,spreadsheetname: object, dataframe: object
                                   'Relay_Y/N', 'Relay_Player', 'Relay_Type', 'Relay_Activity', 'Stumping_Activity','Dismissal']
             sh = client.open_by_url(url)
             worksheet = sh.worksheet(spreadsheetname)
-            worksheet.append_table(dataframe[col],sheet = spreadsheetname,index = False)
+            worksheet.update(dataframe[col],sheet = spreadsheetname,index = False)
 
 def update_the_spreadsheet_del(url:str,spreadsheetname: object, dataframe: object) -> object:
             col = ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_Byes', 'Extra_LegByes',
