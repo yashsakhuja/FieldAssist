@@ -489,7 +489,7 @@ data_dict = {'Column Names': ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_
 data = pd.DataFrame(data_dict)
 
 #Create the Google Sheets authentication scope
-scope = ["https://www.googleapis.com/auth/spreadsheets"]
+scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
 
 credentials=service_account.Credentials.from_service_account_info(st.secrets["gcp_service_account"],scopes=scope)
 
@@ -499,7 +499,7 @@ spreadsheetname="FieldAssist- Data Collection File"
 
 st.write("Here's the no cost backend- Google Sheets :)")
 
-def load_data(url, sheet_name="Live Match"):
+def load_data(url, sheet_name="Live Match",client):
     sh = client.open_by_url(url)
     df = pd.DataFrame(sh.worksheet('Live Match').get_all_records())
     return df
@@ -514,18 +514,18 @@ def update_the_spreadsheet(spreadsheetname:object, value_row:object) -> object:
             worksheet.clear()
             worksheet.append_rows(value_row)
 
-def update_the_spreadsheet_del(url:str,spreadsheetname: object, dataframe: object) -> object:
-            col = ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_Byes', 'Extra_LegByes',
-                                  'Extra_NoBall', 'Free_Hit', 'Result', 'Runs_Saved', 'Runs_Conceeded',
-                                  'Overthrow Y/N', 'Overthrow_Runs', 'Batsman', 'Bowler', 'Fielder',
-                                  'Position_From_30', 'Field_Position', 'Fielder_Fielding_Detail',
-                                  'Keeper_Fielding_Detail', 'Bowler_Fielding_Detail', 'Fielder_Catching_Detail',
-                                  'Keeper_Catching_Detail', 'Bowler_Catching_Detail', 'Under_Pressure',
-                                  'Fielder_RunOut_Detail', 'Keeper_RunOut_Detail', 'Bowler_RunOut_Detail',
-                                  'Relay_Y/N', 'Relay_Player', 'Relay_Type', 'Relay_Activity', 'Stumping_Activity','Dismissal']
+# def update_the_spreadsheet_del(url:str,spreadsheetname: object, dataframe: object) -> object:
+#             col = ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_Byes', 'Extra_LegByes',
+#                                   'Extra_NoBall', 'Free_Hit', 'Result', 'Runs_Saved', 'Runs_Conceeded',
+#                                   'Overthrow Y/N', 'Overthrow_Runs', 'Batsman', 'Bowler', 'Fielder',
+#                                   'Position_From_30', 'Field_Position', 'Fielder_Fielding_Detail',
+#                                   'Keeper_Fielding_Detail', 'Bowler_Fielding_Detail', 'Fielder_Catching_Detail',
+#                                   'Keeper_Catching_Detail', 'Bowler_Catching_Detail', 'Under_Pressure',
+#                                   'Fielder_RunOut_Detail', 'Keeper_RunOut_Detail', 'Bowler_RunOut_Detail',
+#                                   'Relay_Y/N', 'Relay_Player', 'Relay_Type', 'Relay_Activity', 'Stumping_Activity','Dismissal']
             
             
-            spread.df_to_sheet(dataframe[col],sheet = spreadsheetname,index = False,replace=True)
+#             spread.df_to_sheet(dataframe[col],sheet = spreadsheetname,index = False,replace=True)
 
 
 # Create a button to add the data
@@ -572,14 +572,14 @@ if add_button:
     new_df=new_df.reset_index(inplace=False)
     # Convert the DataFrame to a list of rows
     list_of_rows = new_df.values.tolist()
-    update_the_spreadsheet('Live Match', list_of_rows)
+    update_the_spreadsheet('Live Match', list_of_rows,client)
 
-if remove_button:
-    # Create a dictionary to store column names and values
-    df = load_data('https://docs.google.com/spreadsheets/d/1qi_Qdoj1vhKwSnWOQtz2ebA-n5E3VovKa08dWrPmHQk/edit?pli=1#gid=0')
+# if remove_button:
+#     # Create a dictionary to store column names and values
+#     df = load_data('https://docs.google.com/spreadsheets/d/1qi_Qdoj1vhKwSnWOQtz2ebA-n5E3VovKa08dWrPmHQk/edit?pli=1#gid=0')
 
-    last_row = len(df)-1
-    del_df = df.drop(last_row,axis=0)
-    update_the_spreadsheet_del('Live Match', del_df)
+#     last_row = len(df)-1
+#     del_df = df.drop(last_row,axis=0)
+#     update_the_spreadsheet_del('Live Match', del_df)
 
 ### End ##################
