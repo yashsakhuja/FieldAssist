@@ -508,7 +508,7 @@ def load_data(url, sheet_name="Live Match"):
 spreadsheetname="FieldAssist- Data Collection File"
 
 # Update to Sheet
-def update_the_spreadsheet(url:object,spreadsheetname: object, last_list: object) -> object:
+def update_the_spreadsheet(url:object,spreadsheetname: object, data: object) -> object:
             col = ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_Byes', 'Extra_LegByes',
                                   'Extra_NoBall', 'Free_Hit', 'Result', 'Runs_Saved', 'Runs_Conceeded',
                                   'Overthrow Y/N', 'Overthrow_Runs', 'Batsman', 'Bowler', 'Fielder',
@@ -519,7 +519,7 @@ def update_the_spreadsheet(url:object,spreadsheetname: object, last_list: object
                                   'Relay_Y/N', 'Relay_Player', 'Relay_Type', 'Relay_Activity', 'Stumping_Activity','Dismissal']
             sh = client.open_by_url(url)
             worksheet = sh.worksheet(spreadsheetname)
-            worksheet.append_row(last_list)
+            worksheet.append_row(data.values.tolist())
 
 def update_the_spreadsheet_del(url:str,spreadsheetname: object, dataframe: object) -> object:
             col = ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_Byes', 'Extra_LegByes',
@@ -581,7 +581,7 @@ if add_button:
     # Extract the last row
     last_df = new_df.iloc[-1]       
     last_row_list = last_df.tolist()
-    update_the_spreadsheet('https://docs.google.com/spreadsheets/d/1qi_Qdoj1vhKwSnWOQtz2ebA-n5E3VovKa08dWrPmHQk/edit?pli=1#gid=0','Live Match', last_row_list)
+    update_the_spreadsheet('https://docs.google.com/spreadsheets/d/1qi_Qdoj1vhKwSnWOQtz2ebA-n5E3VovKa08dWrPmHQk/edit?pli=1#gid=0','Live Match', data)
 
 if remove_button:
     # Create a dictionary to store column names and values
