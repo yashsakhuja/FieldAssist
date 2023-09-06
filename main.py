@@ -508,8 +508,8 @@ def load_data(url, sheet_name="Live Match"):
 spreadsheetname="FieldAssist- Data Collection File"
 
 # Update to Sheet
-def update_the_spreadsheet(url:object,spreadsheetname:object, value_row:object) -> object:
-            sh = client.open_by_url(url)
+def update_the_spreadsheet(spreadsheetname:object, value_row:object) -> object:
+            sh = client.open_by_url('https://docs.google.com/spreadsheets/d/1qi_Qdoj1vhKwSnWOQtz2ebA-n5E3VovKa08dWrPmHQk/edit?pli=1#gid=0')
             worksheet = sh.worksheet(spreadsheetname)
             worksheet.clear()
             worksheet.append_rows(value_row)
@@ -572,7 +572,7 @@ if add_button:
     new_df=new_df.reset_index(inplace=False)
     # Convert the DataFrame to a list of rows
     list_of_rows = new_df.values.tolist()
-    update_the_spreadsheet('https://docs.google.com/spreadsheets/d/1qi_Qdoj1vhKwSnWOQtz2ebA-n5E3VovKa08dWrPmHQk/edit?pli=1#gid=0','Live Match', list_of_rows)
+    update_the_spreadsheet('Live Match', list_of_rows)
 
 if remove_button:
     # Create a dictionary to store column names and values
