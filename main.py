@@ -508,7 +508,7 @@ def load_data(url, sheet_name="Live Match"):
 spreadsheetname="FieldAssist- Data Collection File"
 
 # Update to Sheet
-def update_the_spreadsheet(url,spreadsheetname, value_row):
+def update_the_spreadsheet(url:object,spreadsheetname:object, value_row:object) -> object:
             sh = client.open_by_url(url)
             worksheet = sh.worksheet(spreadsheetname)
             worksheet.clear()
