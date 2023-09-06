@@ -499,7 +499,7 @@ spreadsheetname="FieldAssist- Data Collection File"
 
 st.write("Here's the no cost backend- Google Sheets :)")
 
-def load_data(url, sheet_name="Live Match",client):
+def load_data(url, sheet_name="Live Match"):
     sh = client.open_by_url(url)
     df = pd.DataFrame(sh.worksheet('Live Match').get_all_records())
     return df
@@ -508,7 +508,7 @@ def load_data(url, sheet_name="Live Match",client):
 spreadsheetname="FieldAssist- Data Collection File"
 
 # Update to Sheet
-def update_the_spreadsheet(spreadsheetname:object, value_row:object) -> object:
+def update_the_spreadsheet(spreadsheetname:object, value_row:object,client:object) -> object:
             sh = client.open_by_url('https://docs.google.com/spreadsheets/d/1qi_Qdoj1vhKwSnWOQtz2ebA-n5E3VovKa08dWrPmHQk/edit?pli=1#gid=0')
             worksheet = sh.worksheet(spreadsheetname)
             worksheet.clear()
