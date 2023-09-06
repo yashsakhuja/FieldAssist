@@ -519,7 +519,7 @@ def update_the_spreadsheet(url:object,spreadsheetname: object, dataframe: object
                                   'Relay_Y/N', 'Relay_Player', 'Relay_Type', 'Relay_Activity', 'Stumping_Activity','Dismissal']
             sh = client.open_by_url(url)
             worksheet = sh.worksheet(spreadsheetname)
-            worksheet.append_rows(list(dataframe))
+            worksheet.append_row(list(dataframe))
 
 def update_the_spreadsheet_del(url:str,spreadsheetname: object, dataframe: object) -> object:
             col = ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_Byes', 'Extra_LegByes',
@@ -578,7 +578,9 @@ if add_button:
     df = load_data('https://docs.google.com/spreadsheets/d/1qi_Qdoj1vhKwSnWOQtz2ebA-n5E3VovKa08dWrPmHQk/edit?pli=1#gid=0')
     new_df = df.append(data, ignore_index=True)
     new_df=new_df.reset_index(inplace=False)
-    update_the_spreadsheet('https://docs.google.com/spreadsheets/d/1qi_Qdoj1vhKwSnWOQtz2ebA-n5E3VovKa08dWrPmHQk/edit?pli=1#gid=0','Live Match', new_df)
+    # Extract the last row
+    last_df = new_df.iloc[-1]        
+    update_the_spreadsheet('https://docs.google.com/spreadsheets/d/1qi_Qdoj1vhKwSnWOQtz2ebA-n5E3VovKa08dWrPmHQk/edit?pli=1#gid=0','Live Match', last_df)
 
 if remove_button:
     # Create a dictionary to store column names and values
