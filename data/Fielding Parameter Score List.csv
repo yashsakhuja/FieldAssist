@@ -1,0 +1,292 @@
+Parameter_id,Fielder_type,Fielding_area,Fielding_type,Parameter_description,Dismissal,Success,X,W
+1,fielder,within_30,catch,Regulation Catch taken Successfully,1,1,1,0.5
+2,fielder,within_30,catch,Regulation catch taken Successfully after Fumble,1,1,0.8,0.5
+3,fielder,within_30,catch,Regulation Catch Missed,0,0,0,0.5
+4,fielder,within_30,catch,High Lofted Catch Running Backwards taken Successfully,1,1,1,0.6
+5,fielder,within_30,catch,High Lofted Catch Running Backwards taken Successfully after Fumble,1,1,0.8,0.6
+6,fielder,within_30,catch,High Lofted Catch Running Backwards Reached,0,0,0.5,0.6
+7,fielder,within_30,catch,High Lofted Catch Running Backwards Missed,0,0,0,0.6
+8,fielder,within_30,catch,High Lofted Catch with Slight Adjustment taken Successfully,1,1,1,0.55
+9,fielder,within_30,catch,High Lofted Catch with Slight Adjustment taken Successfully after Fumble,1,1,0.8,0.55
+10,fielder,within_30,catch,High Lofted Catch with Slight Adjustment Missed,0,0,0,0.55
+11,fielder,within_30,catch,Hanging on to a Hard Hit Stroke Successfully,1,1,1,0.75
+12,fielder,within_30,catch,Reached and Stopped a Hard Hit Stroke,0,0,0.5,0.75
+13,fielder,within_30,catch,Missed a Hard Hit Stroke,0,0,0,0.75
+14,fielder,within_30,catch,Catch with an Upward Leap Completed Successfully,1,1,1,0.6
+15,fielder,within_30,catch,Catch with an Upward Leap was Reached and Stopped,0,0,0.5,0.6
+16,fielder,within_30,catch,Catch with an Upward Leap Reached,0,0,0.2,0.6
+17,fielder,within_30,catch,Catch with Upward Leap Missed,0,0,0,0.6
+18,fielder,within_30,catch,Catch with Dive towards Natural Side taken Successfully,1,1,1,0.6
+19,fielder,within_30,catch,Catch with Dive towards Natural Side Reached and Stopped,0,0,0.5,0.6
+20,fielder,within_30,catch,Catch with Dive towards Natural Side Reached,0,0,0.2,0.6
+21,fielder,within_30,catch,Catch with Dive towards Natural Side Missed,0,0,0,0.6
+22,fielder,within_30,catch,Catch with Dive towards Wrong Side taken Successfully,1,1,1,0.65
+23,fielder,within_30,catch,Catch with Dive towards Wrong Side Reached and Stopped,0,0,0.5,0.65
+24,fielder,within_30,catch,Catch with Dive towards Wrong Side Reached,0,0,0.2,0.65
+25,fielder,within_30,catch,Catch with Dive towards Wrong Side Missed,0,0,0,0.65
+26,fielder,within_30,catch,Catch with Forward Dive taken Successfully,1,1,1,0.65
+27,fielder,within_30,catch,Catch with Foward Dive Reached and Stopped,0,0,0.5,0.65
+28,fielder,within_30,catch,Catch with Forward Dive Reached,0,0,0.2,0.65
+29,fielder,within_30,catch,Catch with Forward Dive Missed,0,0,0,0.65
+30,fielder,within_30,fielding,Regulation Fielding with Slight Adjustment of Position and Return to Proper End,0,1,1,0.4
+31,fielder,within_30,fielding,"Regulation Fielding with Slight Adjustment of Position, Fumble and Return to Proper End",0,1,0.8,0.4
+32,fielder,within_30,fielding,Regulation Fielding with Slight Adjustment of Position and Return to Wrong End,0,1,0.5,0.4
+33,fielder,within_30,fielding,"Regulation Fielding with Slight Adjustment  of Position, Fumble and Return to Wrong End",0,1,0.2,0.4
+34,fielder,within_30,fielding,Regulation Fielding with Slight Adjustment Missed,0,0,0,0.4
+35,fielder,within_30,fielding,Successful Fielding with Dive towards Natural Side,0,1,1,0.68
+36,fielder,within_30,fielding,Fielding with Dive towards Natural Side leading to Restriction of Runs,0,1,0.5,0.68
+37,fielder,within_30,fielding,Unsuccessful Fielding with Dive Towards Natural Side,0,0,0,0.68
+38,fielder,within_30,fielding,Successful Fielding with Dive towards Wrong Side,0,1,1,0.8
+39,fielder,within_30,fielding,Fielding with Dive towards Wrong Side leading to Restriction of Runs,0,1,0.5,0.8
+40,fielder,within_30,fielding,Unsuccessful Fielding with Dive towards Wrong Side,0,0,0,0.8
+41,fielder,within_30,fielding,Successful Fielding with Forward/Backward Dive,0,1,1,0.72
+42,fielder,within_30,fielding,Fielding with Forward/Backward Dive leading to Restriction of Runs,0,1,0.5,0.72
+43,fielder,within_30,fielding,Unsuccessful Fielding with Forward/Backward Dive,0,0,0,0.72
+44,fielder,within_30,fielding,Successful Fielding with Considerable Running to Field and Return the Ball,0,1,1,0.48
+45,fielder,within_30,fielding,Successful Fielding after Fumble with Considerable Running to Field and Return the Ball,0,1,0.5,0.48
+46,fielder,within_30,fielding,Unsuccessful Fielding with Considerable Running to Field,0,0,0,0.48
+47,fielder,within_30,runout,"Direct Throw, Hit and Dismissal",1,1,1,1
+48,fielder,within_30,runout,Direct Throw and Hit but Not Out by Third Umpire,0,0,0.8,1
+49,fielder,within_30,runout,Direct Throw and Hit but Batsman Safe,0,0,0.5,1
+50,fielder,within_30,runout,Direct Throw Missed by a Whisker,0,0,0.2,1
+51,fielder,within_30,runout,Direct Throw Missed,0,0,0,1
+52,fielder,within_30,runout,Indirect Throw Straight to Wicket Keeper / Fielder Near the Stumps causing a Dismissal,1,1,1,0.6
+53,fielder,within_30,runout,Indirect Throw Straight to Wicket Keeper / Fielder Near the Stumps No Dismissal,0,0,0.5,0.6
+54,fielder,within_30,runout,Indirect Throw Away from the Wicket Keeper / Fielder Near the Stumps causing a Dismissal,1,1,0.8,0.6
+55,fielder,within_30,runout,Indirect Throw Away from thr Wicket Keeper / Fielder Near the Stumps with No Dismissal,0,0,0.5,0.6
+56,fielder,within_30,runout,Indirect Throw Away from the Wicket Keeper / Fielder and Away from the Stumps,0,0,0,0.6
+57,fielder,within_30,runout,Directly taking the Ball into the Stumps causing a Dismissal,1,1,1,0.75
+58,fielder,within_30,runout,Directly taking the Ball into the Stumps without causing a Dismissal,0,0,0,0.75
+59,bowler,within_30,catch,Direct Catch from Defensive Stroke Taken Successfully,1,1,1,0.55
+60,bowler,within_30,catch,Direct Catch from Defensive Stroke Taken Successfully after Fumble,1,1,0.8,0.55
+61,bowler,within_30,catch,Direct Catch form Defensive Stroke was Missed,0,0,0,0.55
+62,bowler,within_30,catch,Catch to a Hard Hit Stroke taken Successfully with Slight Adjustment,1,1,1,0.75
+63,bowler,within_30,catch,Catch to a Hard Hit Stroke taken Successfully with Slight Adjustment after Fumble,1,1,0.8,0.75
+64,bowler,within_30,catch,Catch to a Hard Hit Stroke with Slight Adjustment Missed but saved runs,0,0,0.6,0.75
+65,bowler,within_30,catch,Catch to a Hard Hit Stroke with Slight Adjustment Missed,0,0,0,0.75
+66,bowler,within_30,catch,Catch to a Hard Hit Stroke taken Successfully with Dive Towards Direction of Movement after Delivery ,1,1,1,0.9
+67,bowler,within_30,catch,Catch to a Hard Hit Stroke taken Successfully with Dive Towards Direction of Movement after Delivery with Fumble,1,1,0.8,0.9
+68,bowler,within_30,catch,Catch to a Hard Hit Stroke with Dive Towards Direction of Movement after Delivery Missed but saved runs,0,0,0.6,0.9
+69,bowler,within_30,catch,Catch to a Hard Hit Stroke with Dive Towards Direction of Movement after Delivery Missed,0,0,0,0.9
+70,bowler,within_30,catch,Catch to a Hard Hit Stroke taken Successfully with Dive Towards Opposite Direction of Movement after Delivery ,1,1,1,1
+71,bowler,within_30,catch,Catch to a Hard Hit Stroke taken Successfully with Dive Towards Opposite Direction of Movement after Delivery with Fumble,1,1,0.8,1
+72,bowler,within_30,catch,Catch to a Hard Hit Stroke with Dive Towards Direction of Movement after Delivery Missed but saved runs,0,0,0.6,1
+73,bowler,within_30,catch,Catch to a Hard Hit Stroke with Dive Towards Direction of Movement after Delivery Missed,0,0,0,1
+74,bowler,within_30,catch,Catch to a Hard Hit Stroke taken Successfully with an Upward Leap,1,1,1,0.65
+75,bowler,within_30,catch,Catch to a Hard Hit Stroke taken Successfully with an Upward Leap after Fumble,1,1,0.8,0.65
+76,bowler,within_30,catch,Catch to a Hard Hit Stroke with an Upward Leap Missed but saved runs,0,0,0.6,0.65
+77,bowler,within_30,catch,Catch to a Hard Hit Stroke with an Upward Leap Missed,0,0,0,0.65
+78,bowler,within_30,catch,Catch to a Lofty Ball taken Successfully with Forward Drive,1,1,1,0.6
+79,bowler,within_30,catch,Catch to a Lofty Ball with Forward Drive Missed,0,0,0,0.6
+80,bowler,within_30,catch,Catch to a Lofty Ball taken Successfully Running  Backwards,1,1,1,0.65
+81,bowler,within_30,catch,Catch to a Lofty Ball taken Running  Backwards Missed,0,0,0,0.65
+82,bowler,within_30,fielding,Regulation Fielding with Slight Adjustment of Position,0,1,1,0.4
+83,bowler,within_30,fielding,Regulation Fielding with Slight Adjustment of Position after Fumble,0,1,0.5,0.4
+84,bowler,within_30,fielding,Regulation Fielding Missed with Slight Adjustment of Position,0,0,0,0.4
+85,bowler,within_30,fielding,Successful Fielding with Dive towards Natural Side,0,1,1,0.72
+86,bowler,within_30,fielding,Fielding with Dive towards Natural Side leading to Restriction of Runs,0,1,0.5,0.72
+87,bowler,within_30,fielding,Unsuccessful Fielding with Dive towards Natural Side,0,0,0,0.72
+88,bowler,within_30,fielding,Successful Fielding with Dive towards Wrong Side,0,1,1,0.8
+89,bowler,within_30,fielding,Fielding with Dive towards Wrong Side leading to Restriction of Runs,0,1,0.5,0.8
+90,bowler,within_30,fielding,Unsuccessful Fielding with Dive towards Wrong Side,0,0,0,0.8
+91,bowler,within_30,fielding,Simple Throw from Fielder Collected Cleanly without Much Effort,0,1,1,0.44
+92,bowler,within_30,fielding,Simple Throw from Fielder Collected Cleanly after Fumble,0,1,0.5,0.44
+93,bowler,within_30,fielding,Simple Throw from Fielder Missed,0,0,0,0.44
+94,bowler,within_30,fielding,Difficult Throw from Fielder Collected Cleanly after Diving,0,1,1,0.52
+95,bowler,within_30,fielding,Difficult Throw from Fielder Missed after Diving and Reaching,0,0,0.5,0.52
+96,bowler,within_30,fielding,Difficult Throw from Fielder Missed without giving Much Effort,0,0,0,0.52
+97,bowler,within_30,runout,"Direct Throw towards Stumps, Hit and Dismissal",1,1,1,1
+98,bowler,within_30,runout,"Direct Throw Towards Stumps, Hit but Not Out by Third Umpire",0,0,0.8,1
+99,bowler,within_30,runout,"Direct Throw Towards Stumps, Hit But Batsman Safe",0,0,0.5,1
+100,bowler,within_30,runout,Direct Throw Towards Stumps Missed by a Whisker,0,0,0.2,1
+101,bowler,within_30,runout,Direct Throw Towards Stumps Missed,0,0,0,1
+102,bowler,within_30,runout,"Indirect Throw to Wicket Keeper/Fielder near the Stumps, causing a Dismissal",1,1,1,0.75
+103,bowler,within_30,runout,"Indirect Throw to Wicket Keeper/Fielder near the Stumps, Hit but Not Out by Third Umpire",0,0,0.5,0.75
+104,bowler,within_30,runout,Indirect Throw to Wicket Keeper/Fielder near the Stumps after Batsman Reached,0,0,0,0.75
+105,bowler,within_30,runout,Indirect Throw to Wicket Keeper/Fielder Straight to Hands over Stumps,0,1,1,0.5
+106,bowler,within_30,runout,Indirect Throw to Wicket Keeper/Fielder Stright to Hands away from the Stumps,0,0,0.8,0.5
+107,bowler,within_30,runout,Indirect Throw to Wicket Keeper/Fielder away from Hands but over the Stumps,0,0,0.5,0.5
+108,bowler,within_30,runout,Indirect Throw to Wicket Keeper/Fielder away from Hands as weel as Stumps,0,0,0,0.5
+109,bowler,within_30,runout,Throw from other Fielder causing a Dismissal,1,1,1,0.6
+110,bowler,within_30,runout,Throw from other Fielder but Not Out by Third Umpire,0,0,0.8,0.6
+111,bowler,within_30,runout,"Throw from other Fielder, Collected Cleanly but Unable to Break Stumps",0,0,0.5,0.6
+112,bowler,within_30,runout,"Throw from other Fielder, Failed to Collect, Run Out Missed",0,0,0,0.6
+113,wk,within_30,fielding,Regular Gathering,0,1,1,0.4
+114,wk,within_30,fielding,Regular Gather after Fumble,0,1,0.5,0.4
+115,wk,within_30,fielding,Failed to Gather,0,0,0,0.4
+116,wk,within_30,fielding,Clean Collection with Dive against Spinner towards the Off Side of Batsman,0,1,1,0.72
+117,wk,within_30,fielding,Reached with Dive against Spinner towards the Off Side of Batsman leading to restriction of Bye-runs,0,1,0.5,0.72
+118,wk,within_30,fielding,Failed to Collect with Dive against Spinner towards the Off Side of Batsman,0,0,0,0.72
+119,wk,within_30,fielding,Clean Collection with Dive against Spinner towards the Leg side of Batsman,0,1,1,0.8
+120,wk,within_30,fielding,Reached with Dive against Spinner towards the Leg Side of Batsman leading to restriction of Bye-runs,0,1,0.5,0.8
+121,wk,within_30,fielding,Failed to Collect with Dive against Spinner towards the Leg Side of Batsman,0,0,0,0.8
+122,wk,within_30,fielding,Clean Collection with Dive against Fast Bowler towards the Off Side of Batsman,0,1,1,0.6
+123,wk,within_30,fielding,Reached with Dive against Fast Bowler towards the Off Side of Batsman leading to restriction of Bye-runs,0,1,0.5,0.6
+124,wk,within_30,fielding,Failed to Collect with Dive against Fast Bowler towards the Off Side of Batsman,0,0,0,0.6
+125,wk,within_30,fielding,Clean Collection with Dive against Fast Bowler towards the Leg side of Batsman,0,1,1,0.68
+126,wk,within_30,fielding,Reached with Dive against Fast Bowler towards the Leg Side of Batsman leading to restriction of Bye-runs,0,1,0.5,0.68
+127,wk,within_30,fielding,Failed to Collect with Dive against Fast Bowler towards the Leg Side of Batsman,0,0,0,0.68
+128,wk,within_30,fielding,Simple Throw from Fielder Collected Cleanly,0,1,1,0.44
+129,wk,within_30,fielding,Simple Throw from Fielder Collected with Fumble,0,1,0.5,0.44
+130,wk,within_30,fielding,Simple Throw from Fielder Missed,0,0,0,0.44
+131,wk,within_30,fielding,Difficult Throw from Fielder Collected by Diving,0,1,1,0.48
+132,wk,within_30,fielding,Difficult Throw from Fielder Collected with an Upward Leap,0,1,0.8,0.48
+133,wk,within_30,fielding,"Difficult Throw from Fielder, Dived, Reached but Failed to Collect",0,1,0.5,0.48
+134,wk,within_30,fielding,Difficult Throw from Fielder Missed without much Effort,0,0,0,0.48
+135,wk,within_30,catch,Direct Regulation Catch of a Spinner taken Successfully,1,1,1,0.55
+136,wk,within_30,catch,Direct Regulation Catch of a Spinner taken Successfully after Fumble,1,1,0.8,0.55
+137,wk,within_30,catch,Direct Regulation Catch of a Spinner Missed,0,0,0,0.55
+138,wk,within_30,catch,Diving Catch on the Off Side of a Spinner taken Successfully,1,1,1,0.9
+139,wk,within_30,catch,Diving Catch on the Off Side of a Spinner taken Successfully after Fumble,1,1,0.8,0.9
+140,wk,within_30,catch,Diving Catch on the Off Side of a Spinner Missed,0,0,0,0.9
+141,wk,within_30,catch,Diving Catch on the Leg Side of a Spinner taken Successfully,1,1,1,1
+142,wk,within_30,catch,Diving Catch on the Leg Side of a Spinner taken Successfully after Fumble,1,1,0.8,1
+143,wk,within_30,catch,Diving Catch on the Leg Side of a Spinner Missed,0,0,0,1
+144,wk,within_30,catch,Diving Catch with and Upward Leap of a Spinner taken Successfully,1,1,1,0.75
+145,wk,within_30,catch,Diving Catch with and Upward Leap of a Spinner Missed but Stopped,0,0,0.8,0.75
+146,wk,within_30,catch,Diving Catch with and Upward Leap of a Spinner Missed,0,0,0,0.75
+147,wk,within_30,catch,Diving Catch with Forward Dive of a Spinner taken Successfully,1,1,1,0.75
+148,wk,within_30,catch,Diving Catch with Forward Dive of a Spinner Missed,0,0,0,0.75
+149,wk,within_30,catch,Catch of a Spinner taken Successfully Running Backwards,1,1,1,0.65
+150,wk,within_30,catch,Catch of a Spinner Missed but Reached Running Backwards,0,0,0.8,0.65
+151,wk,within_30,catch,Catch of a Spinner Missed Running Backwards,0,0,0,0.65
+152,wk,within_30,catch,Direct Regulation Catch of a Fast Bowler taken Successfully,1,1,1,0.5
+153,wk,within_30,catch,Direct Regulation Catch of a Fast Bowler taken Successfully after Fumble,1,1,0.8,0.5
+154,wk,within_30,catch,Direct Regulation Catch of a Fast Bowler Missed,0,0,0,0.5
+155,wk,within_30,catch,Diving Catch on the Off Side of a Fast Bowler taken Successfully,1,1,1,0.65
+156,wk,within_30,catch,Diving Catch on the Off Side of a Fast Bowler taken Successfully after Fumble,1,1,0.8,0.65
+157,wk,within_30,catch,Diving Catch on the Off Side of a Fast Bowler Missed,0,0,0,0.65
+158,wk,within_30,catch,Diving Catch on the Leg Side of a Fast Bowler taken Successfully,1,1,1,0.75
+159,wk,within_30,catch,Diving Catch on the Leg Side of a Fast Bowler taken Successfully after Fumble,1,1,0.8,0.75
+160,wk,within_30,catch,Diving Catch on the Leg Side of a Fast Bowler Missed,0,0,0,0.75
+161,wk,within_30,catch,Diving Catch with and Upward Leap of a Fast Bowler taken Successfully,1,1,1,0.65
+162,wk,within_30,catch,Diving Catch with and Upward Leap of a Fast Bowler Missed but Stopped,0,0,0.5,0.65
+163,wk,within_30,catch,Diving Catch with and Upward Leap of a Spinner Missed,0,0,0,0.65
+164,wk,within_30,catch,Diving Catch with Forward Dive of a Fast Bowler taken Successfully,1,1,1,0.55
+165,wk,within_30,catch,Diving Catch with Forward Dive of a Fast Bowler Missed,0,0,0,0.55
+166,wk,within_30,catch,Catch of a Fast Bowlertaken Successfully Running Backwards,1,1,1,0.6
+167,wk,within_30,catch,Catch of a Fast Bowler Missed but Reached Running Backwards,0,0,0.5,0.6
+168,wk,within_30,catch,Catch of a Fast Bowler Missed Running Backwards,0,0,0,0.6
+169,wk,within_30,stumping,Stumped when Batsman Left the Crease and did not Attempt to Return,1,1,1,0.75
+170,wk,within_30,stumping,Stumped after Fumble when Batsman Left the Crease and did not Attempt to Return,1,1,0.8,0.75
+171,wk,within_30,stumping,Stumping Failed when Batsman Left the Crease and did not Attempt to Return,0,0,0,0.75
+172,wk,within_30,stumping,Stumped when Batsman Stepped Forward and Attempted to Return,1,1,1,1
+173,wk,within_30,stumping,Stumped but Declared Not Out by Third Umpire when Batsman Stepped Forward and Attempted to Return,0,0,0.8,1
+174,wk,within_30,stumping,Stumped but Not Out without Referral to Third Umpire when Batsman Stepped Forward and Attempted to Return,0,0,0.5,1
+175,wk,within_30,stumping,Fumbled while Stumping and Missed when Batsman Stepped Forward and Attempted to Return,0,0,0,1
+176,wk,within_30,runout,"Direct Throw towards Stumps, Hit and Dismissal",1,1,1,1
+177,wk,within_30,runout,"Direct Throw towards Stumps, Hit but Not Out by Third Umpire",0,0,0.8,1
+178,wk,within_30,runout,"Direct Throw towards Stumps, Hit but Batsman Safe",0,0,0.5,1
+179,wk,within_30,runout,Direct Throw towards Stumps but Missed by Whisker,0,0,0.2,1
+180,wk,within_30,runout,Direct Throw towards Stumps Missed,0,0,0,1
+181,wk,within_30,runout,Throw from other Fielder causing a Dismissal,1,1,1,0.75
+182,wk,within_30,runout,Throw from other Fielder but Not Out by Third Umpire,0,0,0.8,0.75
+183,wk,within_30,runout,"Throw from other Fielder, Collected Cleanly but Unable to Break Stumps",0,0,0.5,0.75
+184,wk,within_30,runout,"Throw from other Fielder, Failed to Collect, Run Out Missed",0,0,0,0.75
+185,fielder,outside_30,runout,"Direct Throw towards Stumps, Hit and Dismissal",1,1,1,1
+186,fielder,outside_30,runout,Direct Throw and Hit but Not Out by Third Umpire,0,0,0.8,1
+187,fielder,outside_30,runout,"Direct Throw Towards Stumps, Hit But Batsman Safe",0,0,0.5,1
+188,fielder,outside_30,runout,Direct Throw Towards Stumps Missed by a Whisker,0,0,0.2,1
+189,fielder,outside_30,runout,Direct Throw Towards Stumps Missed,0,0,0,1
+190,fielder,outside_30,runout,"Indirect Throw to Wicket Keeper/Fielder near the Stumps, causing a Dismissal",1,1,1,0.75
+191,fielder,outside_30,runout,"Indirect Throw to Wicket Keeper/Fielder near the Stumps, Hit but Not Out by Third Umpire",0,0,0.5,0.75
+192,fielder,outside_30,runout,"Indirect Throw to Wicket Keeper/Fielder near the Stumps, Stump Broken but Batsman Safe",0,0,0.2,0.75
+193,fielder,outside_30,runout,Accurate Indirect Throw to Wicket Keeper/Fielder near the Stumps,0,0,0.1,0.75
+194,fielder,outside_30,runout,Indirect Throw which is Out of Reach to Wicket Keeper/Fielder near the Stumps,0,0,0,0.75
+195,fielder,outside_30,fielding,Regulation Fielding with Slight Adjustment of Position and Returned to Proper End,0,1,1,0.5
+196,fielder,outside_30,fielding,"Regulation Fielding with Slight Adjustment of Position, Fumble and Return to Proper End",0,1,0.8,0.5
+197,fielder,outside_30,fielding,Regulation Fielding with Slight Adjustment of Position and Return to Wrong End,0,1,0.5,0.5
+198,fielder,outside_30,fielding,"Regulation Fielding with Slight Adjustment  of Position, Fumble and Return to Wrong End",0,1,0.2,0.5
+199,fielder,outside_30,fielding,Misfield at Regulation Fielding leading to Runs,0,0,0,0.5
+200,fielder,outside_30,fielding,Successful Fielding with Considerable Running (5-10) to Field and Return the Ball,0,1,1,0.55
+201,fielder,outside_30,fielding,Successful Fielding after Fumble with Considerable Running (5-10) to Field and Return the Ball,0,1,0.5,0.55
+202,fielder,outside_30,fielding,Misfield after Considerable Running (5-10) leading to Runs,0,0,0,0.55
+203,fielder,outside_30,fielding,Successful Fielding with Considerable Running (10-15) to Field and Return the Ball,0,1,1,0.6
+204,fielder,outside_30,fielding,Successful Fielding after Fumble with Considerable Running (10-15) to Field and Return the Ball,0,1,0.5,0.6
+205,fielder,outside_30,fielding,Misfield after Considerable Running (10-15) leading to Runs,0,0,0,0.6
+206,fielder,outside_30,fielding,Successful Fielding with Considerable Running (>15) to Field and Return the Ball,0,1,1,0.8
+207,fielder,outside_30,fielding,Successful Fielding after Fumble with Considerable Running (>15) to Field and Return the Ball,0,1,0.5,0.8
+208,fielder,outside_30,fielding,Misfield after Considerable Running (>15) leading to Runs,0,0,0.1,0.8
+209,fielder,outside_30,fielding,Diving with Considerable Running to Field (5-10 yards) and Return the Ball,0,1,1,0.65
+210,fielder,outside_30,fielding,Diving & Fielding after Fumble with Considerable Running to Field  (5-10 yards) and Return the Ball,0,1,0.5,0.65
+211,fielder,outside_30,fielding,Mis field after Considerable Running (5-10 yards) and diving  leading to Runs,0,0,0,0.65
+212,fielder,outside_30,fielding,Diving with Considerable Running to Field (10-15 yards) and Return the Ball,0,1,1,0.75
+213,fielder,outside_30,fielding,Diving & Fielding after Fumble with Considerable Running to Field  (10-15 yards) and Return the Ball,0,1,0.5,0.75
+214,fielder,outside_30,fielding,Mis field after Considerable Running (10-15 yards) and diving  leading to Runs,0,0,0,0.75
+215,fielder,outside_30,fielding,Diving with Considerable Running to Field (>15 yards) and Return the Ball,0,1,1,0.9
+216,fielder,outside_30,fielding,Diving & Fielding after Fumble with Considerable Running to Field  (>15 yards) and Return the Ball,0,1,0.5,0.9
+217,fielder,outside_30,fielding,Misfield after Considerable Running (>15 yards) and diving  leading to Runs,0,0,0.1,0.9
+218,fielder,outside_30,catch,Regulation Catch with Adjustment in Fielding Position taken Successfully ,1,1,1,0.55
+219,fielder,outside_30,catch,Regulation Catch with Adjustment in Fielding Position taken Successfully after Fumble,1,1,0.8,0.55
+220,fielder,outside_30,catch,Regulation Catch with Adjustment in Fielding Position Missed but Saved Runs,0,0,0.5,0.55
+221,fielder,outside_30,catch,Regulation Catch with Adjustment in Fielding Position Missed,0,0,0,0.55
+222,fielder,outside_30,catch,Catch over the Fielder's Head taken Successfully,1,1,1,0.75
+223,fielder,outside_30,catch,Catch over the Fielder's Head taken Successfully after Fumble,1,1,0.8,0.75
+224,fielder,outside_30,catch,Catch over the Fielder's Missed but Saved Runs,0,0,0.5,0.75
+225,fielder,outside_30,catch,Catch over the Fielder's Head Missed,0,0,0,0.75
+226,fielder,outside_30,catch,Catch with Considerable Running(0-10 yards) taken Successfully,1,1,1,0.6
+227,fielder,outside_30,catch,Catch with Considerable Running (0-10 yards) taken Successfully after Fumble,1,1,0.8,0.6
+228,fielder,outside_30,catch,Catch with Considerable Running(0-10 yards) Missed but Saved Runs,0,0,0.5,0.6
+229,fielder,outside_30,catch,Catch with Considerable Running (0-10 yards) Missed,0,0,0.1,0.6
+230,fielder,outside_30,catch,Catch with Considerable Running(10-15 yards) taken Successfully,1,1,1,0.65
+231,fielder,outside_30,catch,Catch with Considerable Running (10-15 yards) taken Successfully after Fumble,1,1,0.8,0.65
+232,fielder,outside_30,catch,Catch with Considerable Running(10-15 yards) Missed but Saved Runs,0,0,0.5,0.65
+233,fielder,outside_30,catch,Catch with Considerable Running (10-15 yards) Missed,0,0,0.1,0.65
+234,fielder,outside_30,catch,Catch with Considerable Running (>15 yards) taken Successfully,1,1,1,0.9
+235,fielder,outside_30,catch,Catch with Considerable Running (>15 yards) taken Successfully after Fumble,1,1,0.8,0.9
+236,fielder,outside_30,catch,Catch with Considerable Running(>15 yards) Missed but Saved Runs,0,0,0.5,0.9
+237,fielder,outside_30,catch,Catch with Considerable Running (>15 yards) Missed,0,0,0.2,0.9
+238,fielder,outside_30,catch,Catch with Running (0-10 yards) and Diving taken Successfully,1,1,1,0.7
+239,fielder,outside_30,catch,Catch with Running (0-10 yards) and Diving taken Successfully after Fumble,1,1,0.8,0.7
+240,fielder,outside_30,catch,Catch with Running (0-10 yards) and Diving Missed but Saved Runs,0,0,0.5,0.7
+241,fielder,outside_30,catch,Catch with Running (0-10 yards) and Diving Missed,0,0,0,0.7
+242,fielder,outside_30,catch,Catch with Running (10-15 yards) and Diving taken Successfully,1,1,1,0.8
+243,fielder,outside_30,catch,Catch with Running and (10-15 yards) Diving taken Successfully after Fumble,1,1,0.8,0.8
+244,fielder,outside_30,catch,Catch with Running (10-15 yards) and Diving Missed but Saved Runs,0,0,0.5,0.8
+245,fielder,outside_30,catch,Catch with Running (10-15 yards) and Diving Missed,0,0,0.1,0.8
+246,fielder,outside_30,catch,Catch with Running (>15 yards) and Diving taken Successfully,1,1,1,1
+247,fielder,outside_30,catch,Catch with Running (>15 yards) and Diving taken Successfully after Fumble,1,1,0.8,1
+248,fielder,outside_30,catch,Catch with Running  (>15 yards) and Diving Missed but Saved Runs,0,0,0.5,1
+249,fielder,outside_30,catch,Catch with Running  (>15 yards) and Diving Missed,0,0,0.2,1
+250,fielder,within_30,fielding,Fielded and Returned the Ball Instantly after Considerable Running (0-10 yards) Behind the Ball towards the Boundary,1,1,1,0.5
+251,fielder,within_30,fielding,Fielded and Returned the Ball with Pause after Considerable Running (0-10 yards) Behind the Ball towards the Boundary,1,1,0.8,0.5
+252,fielder,within_30,fielding,Fielded and Ball Returned by Another Fielder after Considerable Running (0-10 yards) Behind the Ball towards the Boundary,0,0,0.5,0.5
+253,fielder,within_30,fielding,Failed to Field after Considerable Running (0-10 yards) Behind the Ball towards the Boundary,0,0,0,0.5
+254,fielder,within_30,fielding,Fielded and Returned the Ball Instantly after Considerable Running (10-15 yards) Behind the Ball towards the Boundary,1,1,1,0.6
+255,fielder,within_30,fielding,Fielded and Returned the Ball with Pause after Considerable Running (10-15 yards) Behind the Ball towards the Boundary,1,1,0.8,0.6
+256,fielder,within_30,fielding,Fielded and Ball Returned by Another Fielder after Considerable Running (10-15 yards) Behind the Ball towards the Boundary,0,0,0.5,0.6
+257,fielder,within_30,fielding,Failed to Field after Considerable Running (10-15 yards) Behind the Ball towards the Boundary,0,0,0,0.6
+258,fielder,within_30,fielding,Fielded and Returned the Ball Instantly after Considerable Running (>15 yards) Behind the Ball towards the Boundary,1,1,1,0.72
+259,fielder,within_30,fielding,Fielded and Returned the Ball with Pause after Considerable Running (>15 yards) Behind the Ball towards the Boundary,1,1,0.8,0.72
+260,fielder,within_30,fielding,Fielded and Ball Returned by Another Fielder after Considerable Running (>15 yards) Behind the Ball towards the Boundary,0,0,0.5,0.72
+261,fielder,within_30,fielding,Failed to Field after Considerable Running (>15 yards) Behind the Ball towards the Boundary,0,0,0,0.72
+262,fielder,within_30,catch,High Lofted Catch with Considerable Running (0-10 yards) taken Successfully,1,1,1,0.7
+263,fielder,within_30,catch,High Lofted Catch with Considerable Running (0-10 yards) taken Successfully after Fumble ,1,1,0.8,0.7
+264,fielder,within_30,catch,High Lofted Catch with Considerable Running (0-10 yards) Reached,0,0,0.5,0.7
+265,fielder,within_30,catch,High Lofted Catch with Considerable Running (0-10 yards) Missed,0,0,0,0.7
+266,fielder,within_30,catch,High Lofted Catch with Considerable Running (10-15 yards) taken Successfully,1,1,1,0.8
+267,fielder,within_30,catch,High Lofted Catch with Considerable Running (10-15 yards) taken Successfully after Fumble ,1,1,0.8,0.8
+268,fielder,within_30,catch,High Lofted Catch with Considerable Running (10-15 yards) Reached,0,0,0.5,0.8
+269,fielder,within_30,catch,High Lofted Catch with Considerable Running (10-15 yards) Missed,0,0,0,0.8
+270,fielder,within_30,catch,High Lofted Catch with Considerable Running (>15 yards) taken Successfully,1,1,1,1
+271,fielder,within_30,catch,High Lofted Catch with Considerable Running (>15 yards) taken Successfully after Fumble ,1,1,0.8,1
+272,fielder,within_30,catch,High Lofted Catch with Considerable Running (>15 yards) Reached,0,0,0.5,1
+273,fielder,within_30,catch,High Lofted Catch with Considerable Running (>15 yards) Missed,0,0,0,1
+274,wk,within_30,fielding,Successfully Collected the Ball after Considerable Running (0-10 yards) to Save Leg-bye,0,1,1,0.52
+275,wk,within_30,fielding,Successfully Collected the Ball with Fumble after Considerable Running (0-10 yards) to Save Leg-bye,0,1,0.5,0.52
+276,wk,within_30,fielding,Failed to Collect the Ball after Considerable Running (0-10 yards) to Save Leg-bye,0,0,0,0.52
+277,wk,within_30,fielding,Successfully Collected the Ball after Considerable Running (10-15 yards) to Save Leg-bye,0,1,1,0.62
+278,wk,within_30,fielding,Successfully Collected the Ball with Fumble after Considerable Running (10-15 yards) to Save Leg-bye,0,1,0.5,0.62
+279,wk,within_30,fielding,Failed to Collect the Ball after Considerable Running (10-15 yards) to Save Leg-bye,0,0,0,0.62
+280,wk,within_30,fielding,Successfully Collected the Ball after Considerable Running (>15 yards) to Save Leg-bye,0,1,1,0.75
+281,wk,within_30,fielding,Successfully Collected the Ball with Fumble after Considerable Running (>15 yards) to Save Leg-bye,0,1,0.5,0.75
+282,wk,within_30,fielding,Failed to Collect the Ball after Considerable Running (>15 yards) to Save Leg-bye,0,0,0,0.75
+283,bowler,within_30,fielding,Fielded and Returned the Ball Successfully after Considerable Running (0-10 yards),0,1,1,0.5
+284,bowler,within_30,fielding,Fielded and Returned the Ball Successfully with Fumble after Considerable Running (0-10 yards),0,1,0.5,0.5
+285,bowler,within_30,fielding,Unsuccessful Fielding after Considerable Running (0-10 yards),0,0,0,0.5
+286,bowler,within_30,fielding,Fielded and Returned the Ball Successfully after Considerable Running (10-15 yards),0,1,1,0.55
+287,bowler,within_30,fielding,Fielded and Returned the Ball Successfully with Fumble after Considerable Running (10-15 yards),0,1,0.5,0.55
+288,bowler,within_30,fielding,Unsuccessful Fielding after Considerable Running (10-15 yards),0,0,0,0.55
+289,bowler,within_30,fielding,Fielded and Returned the Ball Successfully after Considerable Running (>15 yards),0,1,1,0.65
+290,bowler,within_30,fielding,Fielded and Returned the Ball Successfully with Fumble after Considerable Running (>15 yards),0,1,0.5,0.65
+291,bowler,within_30,fielding,Unsuccessful Fielding after Considerable Running (>15 yards),0,0,0,0.65
