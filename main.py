@@ -566,7 +566,6 @@ if add_button:
         'Stumping_Activity': [st.session_state['s_wk_act']],
         'Dismissal':[st.session_state['s_dismissal']]
     })
-            
     # Extract the values row as a list (excluding the header)
     values_row = data.iloc[0].tolist()
     update_the_spreadsheet('https://docs.google.com/spreadsheets/d/1qi_Qdoj1vhKwSnWOQtz2ebA-n5E3VovKa08dWrPmHQk/edit?pli=1#gid=0','Live Match', values_row)
