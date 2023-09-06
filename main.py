@@ -508,15 +508,7 @@ def load_data(url, sheet_name="Live Match"):
 spreadsheetname="FieldAssist- Data Collection File"
 
 # Update to Sheet
-def update_the_spreadsheet(url:object,spreadsheetname: object, value_row: object) -> object:
-            col = ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_Byes', 'Extra_LegByes',
-                                  'Extra_NoBall', 'Free_Hit', 'Result', 'Runs_Saved', 'Runs_Conceeded',
-                                  'Overthrow Y/N', 'Overthrow_Runs', 'Batsman', 'Bowler', 'Fielder',
-                                  'Position_From_30', 'Field_Position', 'Fielder_Fielding_Detail',
-                                  'Keeper_Fielding_Detail', 'Bowler_Fielding_Detail', 'Fielder_Catching_Detail',
-                                  'Keeper_Catching_Detail', 'Bowler_Catching_Detail', 'Under_Pressure',
-                                  'Fielder_RunOut_Detail', 'Keeper_RunOut_Detail', 'Bowler_RunOut_Detail',
-                                  'Relay_Y/N', 'Relay_Player', 'Relay_Type', 'Relay_Activity', 'Stumping_Activity','Dismissal']
+def update_the_spreadsheet(url,spreadsheetname, value_row):
             sh = client.open_by_url(url)
             worksheet = sh.worksheet(spreadsheetname)
             worksheet.append_row(value_row)
