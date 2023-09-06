@@ -511,7 +511,8 @@ spreadsheetname="FieldAssist- Data Collection File"
 def update_the_spreadsheet(url,spreadsheetname, value_row):
             sh = client.open_by_url(url)
             worksheet = sh.worksheet(spreadsheetname)
-            worksheet.append_row(value_row)
+            worksheet.clear()
+            worksheet.append_rows(value_row)
 
 def update_the_spreadsheet_del(url:str,spreadsheetname: object, dataframe: object) -> object:
             col = ['Over', 'Ball', 'Extra_Y/N', 'Extra_Wide', 'Extra_Byes', 'Extra_LegByes',
@@ -566,9 +567,12 @@ if add_button:
         'Stumping_Activity': [st.session_state['s_wk_act']],
         'Dismissal':[st.session_state['s_dismissal']]
     })
-    # Extract the values row as a list (excluding the header)
-    values_row = data.iloc[0].tolist()
-    update_the_spreadsheet('https://docs.google.com/spreadsheets/d/1qi_Qdoj1vhKwSnWOQtz2ebA-n5E3VovKa08dWrPmHQk/edit?pli=1#gid=0','Live Match', values_row)
+    df = load_data('https://docs.google.com/spreadsheets/d/1qi_Qdoj1vhKwSnWOQtz2ebA-n5E3VovKa08dWrPmHQk/edit?pli=1#gid=0')
+    new_df = df.append(data, ignore_index=True)
+    new_df=new_df.reset_index(inplace=False)
+    # Convert the DataFrame to a list of rows
+    list_of_rows = new_df.values.tolist()
+    update_the_spreadsheet('https://docs.google.com/spreadsheets/d/1qi_Qdoj1vhKwSnWOQtz2ebA-n5E3VovKa08dWrPmHQk/edit?pli=1#gid=0','Live Match', list_of_rows)
 
 if remove_button:
     # Create a dictionary to store column names and values
