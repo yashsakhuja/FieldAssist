@@ -1,6 +1,6 @@
 # FieldAssist
 
-This is a data collection concept and framework for collecting data in cricket. It utilizes the streamlit package in python for creation of this interface which collects fielding data based on an extensive parameter/activity list of 290 parameters based on the works of a research paper mentioned below.
+This is a data collection concept and framework for collecting data in cricket. It utilizes the streamlit package in python for creation of this interface which collects fielding data based on an extensive parameter/activity list of 290 parameters based on the works of a research paper mentioned below. It gives you a holy grail of fielding, a who, where, what and why of fielding activities.
 
 Web Application Link: https://fieldassist.streamlit.app/
 Database (Google Sheets) Link: https://docs.google.com/spreadsheets/d/1qi_Qdoj1vhKwSnWOQtz2ebA-n5E3VovKa08dWrPmHQk/edit?pli=1#gid=0
